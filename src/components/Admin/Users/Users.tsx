@@ -5,8 +5,10 @@ const Users = () => {
 
   return (
     <DashboardLayout>
-      <div>
-        <h1>Users Admin</h1>
+      <div className='px-4 md:px-6 lg:px-8'>
+        <div className='max-w-[1312px] w-full mx-auto text-white'>
+          Users Admin
+        </div>
       </div>
     </DashboardLayout>
   );
