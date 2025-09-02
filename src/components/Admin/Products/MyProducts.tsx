@@ -130,8 +130,8 @@ const MyProducts = () => {
                                 <tr key={product.id} className={`border-b border-[#FFFFFF0D] hover:bg-[#13151E] transition-colors ${index === products.length - 1 ? 'border-b-0' : ''}`}>
                                     <td className="px-4 py-4">
                                         <div className="flex items-center gap-3">
-                                            <Image src='/assets/icons/default.svg' alt='default' width={40} height={40} />
-                                            <span className="text-white text-[15px] font-medium">{product.name}</span>
+                                            <Image src='/assets/icons/default.svg' alt='default' width={40} height={40} className='sm:w-10 w-8' />
+                                            <span className="text-white text-[14px] sm:text-[15px] font-medium">{product.name}</span>
                                         </div>
                                     </td>
                                     <td className="px-4 py-4">
