@@ -35,12 +35,12 @@ const VerificationCode = () => {
     }
 
     return (
-        <div className='min-h-screen w-full'>
-            <div className='pt-8 pl-4 sm:pl-7 md:pl-10 lg:pl-16'>
+        <div className='min-h-screen w-full px-4'>
+            <div className='pt-8 pl-0 sm:pl-7 md:pl-10 lg:pl-16'>
                 <Logo />
             </div>
-            <div className='my-14 md:my-[112px] w-full flex items-center justify-center'>
-                <div className='border border-[#3B3D5533] bg-[#13151E] rounded-[10px] w-full max-w-[592px] mx-auto py-14 px-6 hover:shadow-lg transition-all duration-300'>
+            <div className='my-10 md:my-20 w-full flex items-center justify-center'>
+                <div className='border border-[#3B3D5533] bg-[#13151E] rounded-[10px] w-full max-w-[592px] mx-auto py-6 sm:py-14 px-5 sm:px-6 hover:shadow-lg transition-all duration-300'>
                     <div className='max-w-[442px] w-full mx-auto'>
                         <h2 className='text-white text-[23px] font-semibold mb-2'>Enter Code</h2>
                         <p className='text-[#515A69] text-[16px] font-medium'>Enter code sent in your email</p>
@@ -58,7 +58,7 @@ const VerificationCode = () => {
                                         onChange={(e) => setCode(e.target.value)}
                                         placeholder="Code"
                                         disabled={isVerifying || isResending}
-                                        className='w-full px-4 py-3 bg-[#191C27] rounded-md text-[16px] font-medium text-white placeholder-[#515A69] focus:outline-none focus:ring-2 focus:ring-[#5A66E8] focus:border-transparent transition-all duration-200 hover:bg-[#1F2330] disabled:opacity-50 disabled:cursor-not-allowed'
+                                        className='w-full px-4 py-2.5 bg-[#191C27] rounded-md text-[16px] font-medium text-white placeholder-[#515A69] focus:outline-none focus:ring-2 focus:ring-[#5A66E8] focus:border-transparent transition-all duration-200 hover:bg-[#1F2330] disabled:opacity-50 disabled:cursor-not-allowed'
                                     />
                                 </div>
 
@@ -68,14 +68,14 @@ const VerificationCode = () => {
                                     loadingText="Loading..."
                                     disabled={isVerifying || isResending || !code.trim()}
                                     fullWidth
-                                    className='mt-12'
+                                    className='mt-8 sm:mt-12 h-[45px]'
                                 >
                                     Continue
                                 </Button>
                             </div>
                         </form>
 
-                        <div className='relative mb-[30px] mt-[60px]'>
+                        <div className='relative mb-[30px] mt-10 sm:mt-[60px]'>
                             <div className='absolute inset-0 flex items-center'>
                                 <div className='w-full border-t border-[#FFFFFF1A]'></div>
                             </div>
