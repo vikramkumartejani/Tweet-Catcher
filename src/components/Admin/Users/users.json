@@ -1,0 +1,531 @@
+[
+  {
+    "username": "john-doe",
+    "name": "John Doe",
+    "email": "johndoe@email.com",
+    "spent": "$1,489.12",
+    "joined": "3 Years Ago",
+    "mrr": "0 ETH",
+    "discord": ["Johndoe12", "Johndoe13"],
+    "location": {
+      "country": "United States",
+      "state": "California",
+      "city": "San Francisco",
+      "timezone": "PST (UTC-8)",
+      "ip": "192.168.1.1"
+    },
+    "userNumber": "#18745",
+    "userId": "user_1774728GYYX8183Ad",
+    "trafficSource": "https://tweet-catcher-gitbook.io/tweet-catcher/",
+    "activeProducts": [
+      {
+        "product": "Monitor 25 Extra Tasks",
+        "plan": "$25.00",
+        "discount": "",
+        "status": "Expires in 13 Days",
+        "statusType": "warning"
+      },
+      {
+        "product": "Premium Analytics",
+        "plan": "$50.00",
+        "discount": "10%",
+        "status": "Active",
+        "statusType": "success"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Basic Plan",
+        "plan": "$10.00",
+        "status": "Cancelled",
+        "cancelledDate": "2 months ago",
+        "reason": "User requested cancellation"
+      },
+      {
+        "product": "Pro Plan",
+        "plan": "$50.00",
+        "status": "Expired",
+        "cancelledDate": "1 month ago",
+        "reason": "Payment failed"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$25",
+        "product": "Monitor 25 Extra Tasks",
+        "plan": "$25.00",
+        "status": "success",
+        "billingReason": "One time payment",
+        "method": "Coinbase",
+        "paid": "2 Days Ago",
+        "created": "2 Days Ago"
+      },
+      {
+        "amount": "$50",
+        "product": "Premium Analytics",
+        "plan": "$50.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "Stripe",
+        "paid": "1 Week Ago",
+        "created": "1 Week Ago"
+      }
+    ]
+  },
+  {
+    "username": "jane-smith",
+    "name": "Jane Smith",
+    "email": "janesmith@email.com",
+    "spent": "$2,340.50",
+    "joined": "2 Years Ago",
+    "mrr": "150 ETH",
+    "discord": ["JaneS", "JaneSmith_Dev"],
+    "location": {
+      "country": "Canada",
+      "state": "Ontario",
+      "city": "Toronto",
+      "timezone": "EST (UTC-5)",
+      "ip": "203.45.67.89"
+    },
+    "userNumber": "#19234",
+    "userId": "user_19234ABC789XYZ",
+    "trafficSource": "https://google.com/search?q=tweet+catcher",
+    "activeProducts": [
+      {
+        "product": "Enterprise Plan",
+        "plan": "$200.00",
+        "discount": "15%",
+        "status": "Active",
+        "statusType": "success"
+      },
+      {
+        "product": "API Access Pro",
+        "plan": "$75.00",
+        "discount": "",
+        "status": "Expires in 5 Days",
+        "statusType": "warning"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Starter Plan",
+        "plan": "$15.00",
+        "status": "Cancelled",
+        "cancelledDate": "6 months ago",
+        "reason": "Upgraded to Enterprise"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$200",
+        "product": "Enterprise Plan",
+        "plan": "$200.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "PayPal",
+        "paid": "3 Days Ago",
+        "created": "3 Days Ago"
+      },
+      {
+        "amount": "$75.00",
+        "product": "API Access Pro",
+        "plan": "$75.00",
+        "status": "success",
+        "billingReason": "One time payment",
+        "method": "Bank Transfer",
+        "paid": "2 Weeks Ago",
+        "created": "2 Weeks Ago"
+      }
+    ]
+  },
+  {
+    "username": "mike-johnson",
+    "name": "Mike Johnson",
+    "email": "mikej@email.com",
+    "spent": "$890.75",
+    "joined": "1 Year Ago",
+    "mrr": "50 ETH",
+    "discord": ["MikeJ", "MikeJohnson_Tech"],
+    "location": {
+      "country": "United Kingdom",
+      "state": "England",
+      "city": "London",
+      "timezone": "GMT (UTC+0)",
+      "ip": "185.199.108.153"
+    },
+    "userNumber": "#20567",
+    "userId": "user_20567DEF456GHI",
+    "trafficSource": "https://twitter.com/tweetcatcher",
+    "activeProducts": [
+      {
+        "product": "Business Plan",
+        "plan": "$100.00",
+        "discount": "20%",
+        "status": "Active",
+        "statusType": "success"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Basic Plan",
+        "plan": "$10.00",
+        "status": "Expired",
+        "cancelledDate": "3 months ago",
+        "reason": "Subscription ended"
+      },
+      {
+        "product": "Pro Plan",
+        "plan": "$50.00",
+        "status": "Cancelled",
+        "cancelledDate": "1 month ago",
+        "reason": "Switched to Business Plan"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$100",
+        "product": "Business Plan",
+        "plan": "$100.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "Credit Card",
+        "paid": "1 Week Ago",
+        "created": "1 Week Ago"
+      }
+    ]
+  },
+  {
+    "username": "sarah-wilson",
+    "name": "Sarah Wilson",
+    "email": "sarahw@email.com",
+    "spent": "$1,650.25",
+    "joined": "4 Years Ago",
+    "mrr": "0 ETH",
+    "discord": ["SarahW", "SarahWilson_AI"],
+    "location": {
+      "country": "Australia",
+      "state": "New South Wales",
+      "city": "Sydney",
+      "timezone": "AEST (UTC+10)",
+      "ip": "203.2.113.2"
+    },
+    "userNumber": "#17890",
+    "userId": "user_17890GHI123JKL",
+    "trafficSource": "https://linkedin.com/company/tweet-catcher",
+    "activeProducts": [
+      {
+        "product": "AI Analytics Pro",
+        "plan": "$150.00",
+        "discount": "",
+        "status": "Active",
+        "statusType": "success"
+      },
+      {
+        "product": "Data Export Tool",
+        "plan": "$30.00",
+        "discount": "25%",
+        "status": "Expires in 20 Days",
+        "statusType": "warning"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Starter Plan",
+        "plan": "$15.00",
+        "status": "Cancelled",
+        "cancelledDate": "8 months ago",
+        "reason": "Upgraded to AI Analytics"
+      },
+      {
+        "product": "Basic Analytics",
+        "plan": "$25.00",
+        "status": "Expired",
+        "cancelledDate": "4 months ago",
+        "reason": "Payment method expired"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$150",
+        "product": "AI Analytics Pro",
+        "plan": "$150.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "Stripe",
+        "paid": "5 Days Ago",
+        "created": "5 Days Ago"
+      },
+      {
+        "amount": "$30.00",
+        "product": "Data Export Tool",
+        "plan": "$30.00",
+        "status": "success",
+        "billingReason": "One time payment",
+        "method": "PayPal",
+        "paid": "3 Weeks Ago",
+        "created": "3 Weeks Ago"
+      }
+    ]
+  },
+  {
+    "username": "alex-brown",
+    "name": "Alex Brown",
+    "email": "alexb@email.com",
+    "spent": "$3,200.00",
+    "joined": "5 Years Ago",
+    "mrr": "300 ETH",
+    "discord": ["AlexB", "AlexBrown_CEO"],
+    "location": {
+      "country": "Germany",
+      "state": "Bavaria",
+      "city": "Munich",
+      "timezone": "CET (UTC+1)",
+      "ip": "217.160.0.1"
+    },
+    "userNumber": "#15678",
+    "userId": "user_15678JKL789MNO",
+    "trafficSource": "https://github.com/tweet-catcher",
+    "activeProducts": [
+      {
+        "product": "Enterprise Plus",
+        "plan": "$500",
+        "discount": "30%",
+        "status": "Active",
+        "statusType": "success"
+      },
+      {
+        "product": "White Label Solution",
+        "plan": "$1,000",
+        "discount": "",
+        "status": "Active",
+        "statusType": "success"
+      },
+      {
+        "product": "Priority Support",
+        "plan": "$200.00",
+        "discount": "50%",
+        "status": "Expires in 7 Days",
+        "statusType": "warning"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Basic Plan",
+        "plan": "$10.00",
+        "status": "Cancelled",
+        "cancelledDate": "1 year ago",
+        "reason": "Upgraded to Enterprise"
+      },
+      {
+        "product": "Pro Plan",
+        "plan": "$50.00",
+        "status": "Expired",
+        "cancelledDate": "6 months ago",
+        "reason": "Upgraded to Enterprise Plus"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$500",
+        "product": "Enterprise Plus",
+        "plan": "$500.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "Bank Transfer",
+        "paid": "1 Day Ago",
+        "created": "1 Day Ago"
+      },
+      {
+        "amount": "$1,000",
+        "product": "White Label Solution",
+        "plan": "$1,000",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "Wire Transfer",
+        "paid": "1 Day Ago",
+        "created": "1 Day Ago"
+      },
+      {
+        "amount": "$200",
+        "product": "Priority Support",
+        "plan": "$200.00",
+        "status": "success",
+        "billingReason": "One time payment",
+        "method": "Credit Card",
+        "paid": "3 Weeks Ago",
+        "created": "3 Weeks Ago"
+      }
+    ]
+  },
+  {
+    "username": "emma-davis",
+    "name": "Emma Davis",
+    "email": "emmad@email.com",
+    "spent": "$450.00",
+    "joined": "6 Months Ago",
+    "mrr": "0 ETH",
+    "discord": ["EmmaD"],
+    "location": {
+      "country": "France",
+      "state": "Île-de-France",
+      "city": "Paris",
+      "timezone": "CET (UTC+1)",
+      "ip": "87.98.175.85"
+    },
+    "userNumber": "#22345",
+    "userId": "user_22345MNO456PQR",
+    "trafficSource": "https://reddit.com/r/tweetcatcher",
+    "activeProducts": [
+      {
+        "product": "Pro Plan",
+        "plan": "$50.00",
+        "discount": "",
+        "status": "Active",
+        "statusType": "success"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Basic Plan",
+        "plan": "$10.00",
+        "status": "Cancelled",
+        "cancelledDate": "2 months ago",
+        "reason": "Upgraded to Pro Plan"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$50",
+        "product": "Pro Plan",
+        "plan": "$50.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "PayPal",
+        "paid": "1 Week Ago",
+        "created": "1 Week Ago"
+      }
+    ]
+  },
+  {
+    "username": "tom-wilson",
+    "name": "Tom Wilson",
+    "email": "tomw@email.com",
+    "spent": "$750.30",
+    "joined": "1.5 Years Ago",
+    "mrr": "75 ETH",
+    "discord": ["TomW", "TomWilson_Dev"],
+    "location": {
+      "country": "Japan",
+      "state": "Tokyo",
+      "city": "Tokyo",
+      "timezone": "JST (UTC+9)",
+      "ip": "126.209.0.1"
+    },
+    "userNumber": "#20123",
+    "userId": "user_20123PQR789STU",
+    "trafficSource": "https://youtube.com/watch?v=tweetcatcher",
+    "activeProducts": [
+      {
+        "product": "Business Plan",
+        "plan": "$100.00",
+        "discount": "10%",
+        "status": "Active",
+        "statusType": "success"
+      },
+      {
+        "product": "Mobile App Access",
+        "plan": "$25.00",
+        "discount": "",
+        "status": "Expires in 15 Days",
+        "statusType": "warning"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Starter Plan",
+        "plan": "$15.00",
+        "status": "Expired",
+        "cancelledDate": "5 months ago",
+        "reason": "Subscription ended"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$100",
+        "product": "Business Plan",
+        "plan": "$100.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "Credit Card",
+        "paid": "2 Weeks Ago",
+        "created": "2 Weeks Ago"
+      },
+      {
+        "amount": "$25",
+        "product": "Mobile App Access",
+        "plan": "$25.00",
+        "status": "success",
+        "billingReason": "One time payment",
+        "method": "Stripe",
+        "paid": "1 Month Ago",
+        "created": "1 Month Ago"
+      }
+    ]
+  },
+  {
+    "username": "lisa-garcia",
+    "name": "Lisa Garcia",
+    "email": "lisag@email.com",
+    "spent": "$1,100.80",
+    "joined": "2.5 Years Ago",
+    "mrr": "100 ETH",
+    "discord": ["LisaG", "LisaGarcia_Marketing"],
+    "location": {
+      "country": "Spain",
+      "state": "Madrid",
+      "city": "Madrid",
+      "timezone": "CET (UTC+1)",
+      "ip": "80.58.61.250"
+    },
+    "userNumber": "#18901",
+    "userId": "user_18901STU123VWX",
+    "trafficSource": "https://facebook.com/tweetcatcher",
+    "activeProducts": [
+      {
+        "product": "Marketing Suite Pro",
+        "plan": "$200.00",
+        "discount": "15%",
+        "status": "Active",
+        "statusType": "success"
+      }
+    ],
+    "churnedProducts": [
+      {
+        "product": "Basic Plan",
+        "plan": "$10.00",
+        "status": "Cancelled",
+        "cancelledDate": "1 year ago",
+        "reason": "Upgraded to Marketing Suite"
+      },
+      {
+        "product": "Pro Plan",
+        "plan": "$50.00",
+        "status": "Cancelled",
+        "cancelledDate": "6 months ago",
+        "reason": "Upgraded to Marketing Suite Pro"
+      }
+    ],
+    "payments": [
+      {
+        "amount": "$200",
+        "product": "Marketing Suite Pro",
+        "plan": "$200.00",
+        "status": "success",
+        "billingReason": "Monthly subscription",
+        "method": "PayPal",
+        "paid": "4 Days Ago",
+        "created": "4 Days Ago"
+      }
+    ]
+  }
+]
