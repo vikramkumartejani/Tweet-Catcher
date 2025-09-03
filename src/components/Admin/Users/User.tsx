@@ -433,12 +433,6 @@ const Users = () => {
                                         <tr>
                                             <td colSpan={5} className="px-4 py-12 text-center">
                                                 <div className="flex flex-col items-center justify-center gap-4">
-                                                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <circle cx="32" cy="32" r="32" fill="#212430" />
-                                                        <path d="M22.4 44.8L20.8 48.8C16.8 47.2 12.8 45.6 8.8 43.2C7.6 42.4 6.8 41.2 6.8 39.6C6.4 35.2 7.6 30.4 10.4 25.6C10.8 25.2 11.2 24.8 11.6 24.4C13.2 23.6 14.4 23.2 16 22.8L17.6 25.6C17.6 25.6 18.4 25.2 20 25.2C21.6 25.2 22.4 25.6 22.4 25.6L24 22.8C25.6 23.2 26.8 23.6 28.4 24.4C28.8 24.8 29.2 25.2 29.6 25.6C32.4 30.4 33.6 35.2 33.2 39.6C33.2 41.2 32.4 42.4 31.2 43.2C27.2 45.6 23.2 47.2 19.2 48.8L17.6 44.8M18.4 42.4C18.4 42.4 20.8 44 23.2 44C25.6 44 28 42.4 28 42.4" stroke="#6B7587" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                        <path d="M22.4 38.4C23.6 38.4 24.4 37.6 24.4 36.4C24.4 35.2 23.6 34.4 22.4 34.4C21.2 34.4 20.4 35.2 20.4 36.4C20.4 37.6 21.2 38.4 22.4 38.4Z" fill="#6B7587" />
-                                                        <path d="M41.6 38.4C42.8 38.4 43.6 37.6 43.6 36.4C43.6 35.2 42.8 34.4 41.6 34.4C40.4 34.4 39.6 35.2 39.6 36.4C39.6 37.6 40.4 38.4 41.6 38.4Z" fill="#6B7587" />
-                                                    </svg>
                                                     <div className="text-center">
                                                         <h3 className="text-[#727A89] text-[16px] font-medium mb-2">No users found</h3>
                                                         <p className="text-[#515A69] text-[14px]">
