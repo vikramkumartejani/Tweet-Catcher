@@ -1,11 +1,12 @@
 import UserProfile from '@/components/Admin/Users/UserProfile'
 
 interface UserPageProps {
-    params: {
+    params: Promise<{
         username: string
-    }
+    }>
 }
 
-export default function UserPage({ params }: UserPageProps) {
-    return <UserProfile username={params.username} />
+export default async function UserPage({ params }: UserPageProps) {
+    const { username } = await params
+    return <UserProfile username={username} />
 }
