@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import DashboardLayout from '@/components/DasbhboardLayout'
 import Dropdown from '@/components/ui/Dropdown'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Users = () => {
     const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
@@ -17,6 +18,7 @@ const Users = () => {
         {
             id: 1,
             name: "John Doe",
+            username: "john-doe",
             email: "johndoe@email.com",
             discord: "johndoe_gamer",
             totalSpend: "$485.00",
@@ -27,6 +29,7 @@ const Users = () => {
         {
             id: 2,
             name: "Jane Smith",
+            username: "jane-smith",
             email: "janesmith@email.com",
             discord: "jane_smith_art",
             totalSpend: "$320.00",
@@ -37,6 +40,7 @@ const Users = () => {
         {
             id: 3,
             name: "Mike Johnson",
+            username: "mike-johnson",
             email: "mikej@email.com",
             discord: "mikej_dev",
             totalSpend: "$750.00",
@@ -47,6 +51,7 @@ const Users = () => {
         {
             id: 4,
             name: "Sarah Wilson",
+            username: "sarah-wilson",
             email: "sarahw@email.com",
             discord: "sarah_wilson_2024",
             totalSpend: "$150.00",
@@ -57,6 +62,7 @@ const Users = () => {
         {
             id: 5,
             name: "Alex Brown",
+            username: "alex-brown",
             email: "alexb@email.com",
             discord: "alex_brown_creative",
             totalSpend: "$200.00",
@@ -67,6 +73,7 @@ const Users = () => {
         {
             id: 6,
             name: "Emma Davis",
+            username: "emma-davis",
             email: "emmad@email.com",
             discord: "emma_davis_design",
             totalSpend: "$400.00",
@@ -77,6 +84,7 @@ const Users = () => {
         {
             id: 7,
             name: "Tom Wilson",
+            username: "tom-wilson",
             email: "tomw@email.com",
             discord: "tom_wilson_tech",
             totalSpend: "$600.00",
@@ -87,6 +95,7 @@ const Users = () => {
         {
             id: 8,
             name: "Lisa Garcia",
+            username: "lisa-garcia",
             email: "lisag@email.com",
             discord: "lisa_garcia_music",
             totalSpend: "$300.00",
@@ -244,7 +253,7 @@ const Users = () => {
                                             className="bg-[#191C27] rounded-md px-4 max-w-[283px] h-[33px] pl-10 text-white text-[13px] placeholder:text-[#727A89] outline-none"
                                         />
                                         <svg className="absolute left-[15px] top-1/2 transform -translate-y-1/2" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10.8097 10.7875L13.875 13.875M12.4583 6.79167C12.4583 9.9213 9.9213 12.4583 6.79167 12.4583C3.66205 12.4583 1.125 9.9213 1.125 6.79167C1.125 3.66205 3.66205 1.125 6.79167 1.125C9.9213 1.125 12.4583 3.66205 12.4583 6.79167Z" stroke="#535EE1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M10.8097 10.7875L13.875 13.875M12.4583 6.79167C12.4583 9.9213 9.9213 12.4583 6.79167 12.4583C3.66205 12.4583 1.125 9.9213 1.125 6.79167C1.125 3.66205 3.66205 1.125 6.79167 1.125C9.9213 1.125 12.4583 3.66205 12.4583 6.79167Z" stroke="#535EE1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </div>
 
@@ -303,7 +312,12 @@ const Users = () => {
                                                             </span>
                                                         </div>
                                                         <div className="flex flex-col">
-                                                            <span className="text-white text-[15px] font-medium">{user.name}</span>
+                                                            <Link 
+                                                                href={`/admin/users/${user.username}`}
+                                                                className="text-white text-[15px] font-medium hover:text-[#535EE1] transition-colors"
+                                                            >
+                                                                {user.name}
+                                                            </Link>
                                                             <span className="text-[#868EA2] text-[13px] font-medium">{user.email}</span>
                                                         </div>
                                                     </div>

@@ -65,7 +65,12 @@ const Header = () => {
     ];
 
     const navigation = isAdmin ? adminNavigation : userNavigation;
-    const isActive = (href: string) => pathname === href;
+    const isActive = (href: string) => {
+        if (href === '/admin/users') {
+            return pathname === href || pathname.startsWith('/admin/users/');
+        }
+        return pathname === href;
+    };
 
     const closeSidebar = () => setSidebarOpen(false);
 
