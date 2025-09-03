@@ -18,6 +18,7 @@ const Users = () => {
             id: 1,
             name: "John Doe",
             email: "johndoe@email.com",
+            discord: "johndoe_gamer",
             totalSpend: "$485.00",
             status: "Renews in 14 Days",
             statusType: "renewal",
@@ -27,6 +28,7 @@ const Users = () => {
             id: 2,
             name: "Jane Smith",
             email: "janesmith@email.com",
+            discord: "jane_smith_art",
             totalSpend: "$320.00",
             status: "Renews in 8 Days",
             statusType: "renewal",
@@ -36,6 +38,7 @@ const Users = () => {
             id: 3,
             name: "Mike Johnson",
             email: "mikej@email.com",
+            discord: "mikej_dev",
             totalSpend: "$750.00",
             status: "Renews in 23 Days",
             statusType: "renewal",
@@ -45,6 +48,7 @@ const Users = () => {
             id: 4,
             name: "Sarah Wilson",
             email: "sarahw@email.com",
+            discord: "sarah_wilson_2024",
             totalSpend: "$150.00",
             status: "Renews in 3 Days",
             statusType: "renewal",
@@ -54,6 +58,7 @@ const Users = () => {
             id: 5,
             name: "Alex Brown",
             email: "alexb@email.com",
+            discord: "alex_brown_creative",
             totalSpend: "$200.00",
             status: "Renews in 29 Days",
             statusType: "renewal",
@@ -63,6 +68,7 @@ const Users = () => {
             id: 6,
             name: "Emma Davis",
             email: "emmad@email.com",
+            discord: "emma_davis_design",
             totalSpend: "$400.00",
             status: "Renews in 12 Days",
             statusType: "renewal",
@@ -72,6 +78,7 @@ const Users = () => {
             id: 7,
             name: "Tom Wilson",
             email: "tomw@email.com",
+            discord: "tom_wilson_tech",
             totalSpend: "$600.00",
             status: "Renews in 5 Days",
             statusType: "renewal",
@@ -81,6 +88,7 @@ const Users = () => {
             id: 8,
             name: "Lisa Garcia",
             email: "lisag@email.com",
+            discord: "lisa_garcia_music",
             totalSpend: "$300.00",
             status: "Renews in 18 Days",
             statusType: "renewal",
@@ -310,15 +318,27 @@ const Users = () => {
                                                 </td>
                                                 <td className="px-4 py-4">
                                                     <div className="flex items-center gap-3">
-                                                        <svg className="w-6 h-6 text-[#6B7587] hover:text-white cursor-pointer transition-colors" fill="none" stroke="currentColor" viewBox="0 0 26 26">
-                                                            <path d="M9.27887 18.4062L8.19554 20.5729C6.81565 19.9979 5.38673 19.423 3.86762 18.4333C3.33787 18.0882 3.01667 17.5017 3.00394 16.8695C2.93785 13.6244 3.69917 10.362 5.62682 6.91262C5.8791 6.46115 6.29944 6.13019 6.78694 5.95713C7.9499 5.54438 8.73937 5.22533 10.0914 5L10.9039 6.48958C10.9039 6.48958 11.7164 6.21875 13.0705 6.21875C14.4247 6.21875 15.2372 6.48958 15.2372 6.48958L16.0497 5C17.4017 5.22533 18.1912 5.54438 19.3541 5.95713C19.8416 6.13019 20.262 6.46115 20.5143 6.91262C22.4419 10.362 23.2032 13.6244 23.1373 16.8695C23.1244 17.5017 22.8032 18.0882 22.2735 18.4333C20.7544 19.423 19.3256 19.9979 17.9455 20.5729L16.8622 18.4062M7.65387 17.3229C7.65387 17.3229 10.3622 18.6771 13.0705 18.6771C15.7789 18.6771 18.4872 17.3229 18.4872 17.3229" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                                            <path d="M9.61466 15.7085C10.5869 15.7085 11.3751 14.7991 11.3751 13.6772C11.3751 12.5554 10.5869 11.646 9.61466 11.646C8.64241 11.646 7.85425 12.5554 7.85425 13.6772C7.85425 14.7991 8.64241 15.7085 9.61466 15.7085Z" fill="currentColor" />
-                                                            <path d="M16.3854 15.7085C17.3577 15.7085 18.1458 14.7991 18.1458 13.6772C18.1458 12.5554 17.3577 11.646 16.3854 11.646C15.4132 11.646 14.625 12.5554 14.625 13.6772C14.625 14.7991 15.4132 15.7085 16.3854 15.7085Z" fill="currentColor" />
-                                                        </svg>
-                                                        <svg className="w-5 h-5 text-[#6B7587] hover:text-white cursor-pointer transition-colors" fill="none" stroke="currentColor" viewBox="0 0 22 17">
-                                                            <path d="M2.08325 3.16705L8.79992 8.20449C9.95551 9.07116 11.5443 9.07116 12.6999 8.20449L19.4166 3.16699" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                                                            <path d="M18.3333 1H3.16667C1.97005 1 1 1.97005 1 3.16667V14C1 15.1966 1.97005 16.1667 3.16667 16.1667H18.3333C19.53 16.1667 20.5 15.1966 20.5 14V3.16667C20.5 1.97005 19.53 1 18.3333 1Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                                                        </svg>
+                                                        <a 
+                                                            href={`https://discord.com/users/${user.discord}`}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="w-6 h-6 text-[#6B7587] hover:text-white cursor-pointer transition-colors"
+                                                        >
+                                                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 26 26">
+                                                                <path d="M9.27887 18.4062L8.19554 20.5729C6.81565 19.9979 5.38673 19.423 3.86762 18.4333C3.33787 18.0882 3.01667 17.5017 3.00394 16.8695C2.93785 13.6244 3.69917 10.362 5.62682 6.91262C5.8791 6.46115 6.29944 6.13019 6.78694 5.95713C7.9499 5.54438 8.73937 5.22533 10.0914 5L10.9039 6.48958C10.9039 6.48958 11.7164 6.21875 13.0705 6.21875C14.4247 6.21875 15.2372 6.48958 15.2372 6.48958L16.0497 5C17.4017 5.22533 18.1912 5.54438 19.3541 5.95713C19.8416 6.13019 20.262 6.46115 20.5143 6.91262C22.4419 10.362 23.2032 13.6244 23.1373 16.8695C23.1244 17.5017 22.8032 18.0882 22.2735 18.4333C20.7544 19.423 19.3256 19.9979 17.9455 20.5729L16.8622 18.4062M7.65387 17.3229C7.65387 17.3229 10.3622 18.6771 13.0705 18.6771C15.7789 18.6771 18.4872 17.3229 18.4872 17.3229" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                                <path d="M9.61466 15.7085C10.5869 15.7085 11.3751 14.7991 11.3751 13.6772C11.3751 12.5554 10.5869 11.646 9.61466 11.646C8.64241 11.646 7.85425 12.5554 7.85425 13.6772C7.85425 14.7991 8.64241 15.7085 9.61466 15.7085Z" fill="currentColor" />
+                                                                <path d="M16.3854 15.7085C17.3577 15.7085 18.1458 14.7991 18.1458 13.6772C18.1458 12.5554 17.3577 11.646 16.3854 11.646C15.4132 11.646 14.625 12.5554 14.625 13.6772C14.625 14.7991 15.4132 15.7085 16.3854 15.7085Z" fill="currentColor" />
+                                                            </svg>
+                                                        </a>
+                                                        <a 
+                                                            href={`mailto:${user.email}`}
+                                                            className="w-5 h-5 text-[#6B7587] hover:text-white cursor-pointer transition-colors"
+                                                        >
+                                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 22 17">
+                                                                <path d="M2.08325 3.16705L8.79992 8.20449C9.95551 9.07116 11.5443 9.07116 12.6999 8.20449L19.4166 3.16699" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                                                                <path d="M18.3333 1H3.16667C1.97005 1 1 1.97005 1 3.16667V14C1 15.1966 1.97005 16.1667 3.16667 16.1667H18.3333C19.53 16.1667 20.5 15.1966 20.5 14V3.16667C20.5 1.97005 19.53 1 18.3333 1Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                                                            </svg>
+                                                        </a>
                                                     </div>
                                                 </td>
                                                 <td className="px-4 py-4">
