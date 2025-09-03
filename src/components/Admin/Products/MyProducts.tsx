@@ -95,7 +95,7 @@ const MyProducts = () => {
 
     return (
         <>
-            <div className="w-full">
+            <div className="w-full mb-10">
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2.5">
                         <Image src='/assets/icons/my-products.svg' alt='my-products' width={28} height={28} />
