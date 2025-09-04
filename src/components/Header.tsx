@@ -169,22 +169,20 @@ const Header = () => {
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        className={`flex items-center gap-1.5 justify-center px-2.5 pr-3.5 h-[33px] rounded-lg transition-colors ${active
-                                            ? 'text-white font-medium relative'
+                                        className={`flex items-center gap-1.5 justify-center px-2.5 pr-3.5 h-[33px] rounded-lg transition-colors relative ${active
+                                            ? 'text-white font-normal'
                                             : 'text-[#6B7587] font-normal'
                                             }`}
                                         style={active ? {
                                             background: 'radial-gradient(76.36% 76.36% at 42.27% 50%, #151721 0%, #1B2939 100%)',
-                                            backgroundClip: 'padding-box',
-                                            position: 'relative'
+                                            backgroundClip: 'padding-box'
                                         } : {}}
                                     >
                                         {active && (
                                             <div
-                                                className="absolute inset-0 rounded-lg -z-10"
+                                                className="absolute inset-0 rounded-lg -z-10 -m-[1px]"
                                                 style={{
-                                                    background: 'linear-gradient(159.44deg, #6D6F9C 16.53%, #262636 79.77%)',
-                                                    margin: '-1px'
+                                                    background: 'linear-gradient(159.44deg, #6D6F9C 16.53%, #262636 79.77%)'
                                                 }}
                                             />
                                         )}
