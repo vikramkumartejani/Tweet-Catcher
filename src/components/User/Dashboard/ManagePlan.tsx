@@ -63,7 +63,7 @@ const ManagePlan = () => {
                     </div>
 
                     {/* Usage Left */}
-                    <div className='mb-8'>
+                    <div className='mb-6'>
                         <div className='flex items-center justify-between mb-3'>
                             <h3 className='text-[#515A69] text-[14px] font-medium'>Usage Left</h3>
                             <div className='text-[#515A69] text-[13px] sm:text-[14px] font-medium'>
@@ -83,7 +83,7 @@ const ManagePlan = () => {
                     </div>
 
                     {/* Pricing */}
-                    <div className='flex items-end sm:items-center sm:flex-row flex-col gap-3.5 sm:gap-5 mb-5'>
+                    <div className='flex items-end sm:items-center sm:flex-row flex-col gap-3.5 sm:gap-5 mb-6'>
                         <input type="text" placeholder='$25.00 / month' defaultValue='$25.00 / month' readOnly className='bg-[#191C27] rounded-md h-[38px] text-[#727A89] text-[14px] font-medium outline-none w-full sm:w-[353px] px-4' />
                         <Button
                             onClick={() => {
@@ -103,7 +103,7 @@ const ManagePlan = () => {
                         </Button>
                     </div>
 
-                    <div className='h-[1px] w-full bg-[#FFFFFF1A] mb-5' />
+                    <div className='h-[1px] w-full bg-[#FFFFFF1A] mb-6' />
 
                     {/* My Add-ons */}
                     <div className='flex items-end sm:items-center sm:flex-row flex-col gap-3.5 sm:gap-11 mb-5'>

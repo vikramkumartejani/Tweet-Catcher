@@ -60,7 +60,7 @@ const Login = () => {
                                     loadingText="Logging in..."
                                     disabled={isEmailLoading || isGoogleLoading || !email}
                                     fullWidth
-                                    className='mt-8 sm:mt-12 h-[45px]'
+                                    className='w-full mt-8 sm:mt-12 h-[45px] bg-[#5A66E8] text-white text-[17px] font-medium cursor-pointer rounded-md'
                                 >
                                     Log In
                                 </Button>

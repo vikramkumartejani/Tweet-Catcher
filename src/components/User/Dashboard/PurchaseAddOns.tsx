@@ -101,7 +101,7 @@ const PurchaseAddOns: React.FC<PurchaseAddOnsProps> = ({ onClose }) => {
                     </div>
 
                     <Button
-                        className='w-full rounded-md text-[14px] bg-[#5A66E8] rounded-md font-semibold sm:max-w-[262px] h-[38px]'
+                        className='w-full rounded-md text-[14px] bg-[#5A66E8] font-semibold sm:max-w-[262px] h-[38px]'
                         onClick={async () => {
                             setIsLoading(true)
                             // Simulate API call
