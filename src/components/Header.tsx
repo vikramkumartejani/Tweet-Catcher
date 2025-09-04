@@ -155,7 +155,7 @@ const Header = () => {
             </div>
 
             {/* Main Header */}
-            <nav className="border-b border-[#FFFFFF1A] px-4 sm:px-6 py-5 sm:py-[22px] shadow-lg">
+            <nav className="sticky top-0 z-30 bg-[#0E1015] border-b border-[#FFFFFF1A] px-4 sm:px-6 py-5 sm:py-[22px] shadow-lg">
                 <div className="flex items-center justify-between max-w-[1312px] w-full mx-auto">
                     <div className="flex items-center space-x-6 xl:space-x-10">
                         <Logo />

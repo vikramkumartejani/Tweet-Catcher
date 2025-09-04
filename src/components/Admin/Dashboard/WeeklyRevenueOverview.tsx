@@ -103,7 +103,7 @@ const WeeklyRevenueOverview = () => {
     }
 
     return (
-        <div className="w-full lg:max-w-[547px] bg-[#13151E] border border-[#3B3D5533] rounded-md flex flex-col pt-[22px] px-3 sm:px-6">
+        <div className="w-full lg:max-w-[547px] bg-[#13151E] border border-[#3B3D5533] rounded-md flex flex-col pt-4.5 md:pt-[22px] px-3 sm:px-6">
             {/* Header */}
             <div className="flex items-start sm:items-center justify-between sm:flex-row flex-col gap-2 mb-5">
                 <h2 className="text-white text-[12px] font-medium">

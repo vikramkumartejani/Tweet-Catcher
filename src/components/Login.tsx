@@ -27,11 +27,11 @@ const Login = () => {
     }
 
     return (
-        <div className='min-h-screen w-full px-4'>
+        <div className='min-h-screen w-full px-4 flex flex-col'>
             <div className='pt-8 pl-0 sm:pl-7 md:pl-10 lg:pl-16'>
                 <Logo />
             </div>
-            <div className='my-10 md:my-20 w-full flex items-center justify-center'>
+            <div className='flex-1 flex items-center justify-center py-8'>
                 <div className='border border-[#3B3D5533] bg-[#13151E] rounded-[10px] w-full max-w-[592px] mx-auto py-6 sm:py-14 px-5 sm:px-6 hover:shadow-lg transition-all duration-300'>
                     <div className='max-w-[442px] w-full mx-auto'>
                         <h2 className='text-white text-[23px] font-semibold mb-2'>Log In</h2>

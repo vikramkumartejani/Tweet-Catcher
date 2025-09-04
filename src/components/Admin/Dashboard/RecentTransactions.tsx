@@ -47,7 +47,7 @@ const RecentTransactions = () => {
     return (
         <div className='mt-6 md:mt-8 flex flex-col lg:flex-row items-stretch w-full justify-between gap-4 md:gap-8'>
             {/* Table */}
-            <div className='py-[22px] px-4.5 sm:px-6 w-full lg:max-w-[975px] bg-[#13151E] border border-[#3B3D5533] rounded-md overflow-hidden flex flex-col'>
+            <div className='py-4.5 sm:py-[22px] px-4.5 sm:px-6 w-full lg:max-w-[975px] bg-[#13151E] border border-[#3B3D5533] rounded-md overflow-hidden flex flex-col'>
                 <div className="flex-shrink-0">
                     <h2 className="text-white text-[12px] font-medium mb-1">Recent Transactions</h2>
                     <p className="text-[#515A69] text-[11px] font-medium">Recent transactions from your store</p>
@@ -99,7 +99,7 @@ const RecentTransactions = () => {
             </div>
 
             {/* Card */}
-            <div className='w-full lg:max-w-[300px] bg-[#13151E] border border-[#3B3D5533] rounded-md flex flex-col py-[22px] px-4.5 sm:px-6'>
+            <div className='w-full lg:max-w-[300px] bg-[#13151E] border border-[#3B3D5533] rounded-md flex flex-col py-4.5 sm:py-[22px] px-4.5 sm:px-6'>
                 <div className="flex-shrink-0">
                     <h2 className="text-white text-[12px] font-medium mb-1">Recent Transactions</h2>
                     <p className="text-[#515A69] text-[11px] font-medium">Recent transactions from your store</p>
