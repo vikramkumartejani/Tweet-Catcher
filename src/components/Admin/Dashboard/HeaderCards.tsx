@@ -17,7 +17,9 @@ const MetricCard: React.FC<MetricCardProps> = ({
         <div className="bg-[#13151E] rounded-md px-4 xl:px-6 py-4 sm:py-4.5 border border-[#3B3D5533] hover:shadow-lg transition-all duration-200">
             <div className="w-full flex items-start justify-between">
                 <div className="w-full flex flex-col">
-                    {icon}
+                    <div className='w-6 h-6 flex items-center justify-center'>
+                        {icon}
+                    </div>
                     <div className='w-full mt-2.5 flex items-center justify-between gap-6'>
                         <div className='flex flex-col gap-1'>
                             <h3 className="text-white text-[12px] font-medium">{title}</h3>

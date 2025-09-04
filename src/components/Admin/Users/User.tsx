@@ -6,6 +6,7 @@ import DashboardLayout from '@/components/DasbhboardLayout'
 import Dropdown from '@/components/ui/Dropdown'
 import Image from 'next/image'
 import Link from 'next/link'
+import Button from '@/components/ui/Button'
 
 const Users = () => {
     const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
@@ -13,6 +14,7 @@ const Users = () => {
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedDateJoined, setSelectedDateJoined] = useState('')
     const [selectedProduct, setSelectedProduct] = useState('')
+    const [loadingStates, setLoadingStates] = useState<{[key: string]: boolean}>({})
 
     const [users, setUsers] = useState([
         {
@@ -121,19 +123,37 @@ const Users = () => {
         { value: 'premium-support', label: 'Premium Support' }
     ]
 
-    const handleDeleteUser = (id: number) => {
-        setUsers(users.filter(user => user.id !== id))
+    const handleDeleteUser = async (id: number) => {
+        setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: true }))
+        // Simulate API call
+        setTimeout(() => {
+            setUsers(users.filter(user => user.id !== id))
+            setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: false }))
+        }, 1000)
     }
 
-    const handleCancelUser = (id: number) => {
-        console.log('Cancel user:', id)
+    const handleCancelUser = async (id: number) => {
+        setLoadingStates(prev => ({ ...prev, [`cancel-${id}`]: true }))
+        // Simulate API call
+        setTimeout(() => {
+            console.log('Cancel user:', id)
+            setLoadingStates(prev => ({ ...prev, [`cancel-${id}`]: false }))
+        }, 1000)
     }
 
-    const handleRefundUser = (id: number) => {
-        console.log('Refund user:', id)
+    const handleRefundUser = async (id: number) => {
+        setLoadingStates(prev => ({ ...prev, [`refund-${id}`]: true }))
+        // Simulate API call
+        setTimeout(() => {
+            console.log('Refund user:', id)
+            setLoadingStates(prev => ({ ...prev, [`refund-${id}`]: false }))
+        }, 1000)
     }
 
-    const handleExportUsers = () => {
+    const handleExportUsers = async () => {
+        setLoadingStates(prev => ({ ...prev, 'export': true }))
+        // Simulate API call
+        setTimeout(() => {
         // Prepare CSV data
         const csvHeaders = ['Name', 'Email', 'Total Spend', 'Status', 'Joined']
         const csvData = filteredUsers.map(user => [
@@ -165,6 +185,8 @@ const Users = () => {
 
         // Clean up
         URL.revokeObjectURL(url)
+        setLoadingStates(prev => ({ ...prev, 'export': false }))
+        }, 1000)
     }
 
     const getStatusBadge = (statusType: string) => {
@@ -276,8 +298,11 @@ const Users = () => {
                             </div>
 
                             {/* Export Button */}
-                            <button
+                            <Button
                                 onClick={handleExportUsers}
+                                loading={loadingStates['export']}
+                                loadingText="Exporting..."
+                                disabled={loadingStates['export']}
                                 className="bg-[#535EE1] hover:bg-[#4A52D9] text-white px-[26px] h-[33px] rounded-md text-[13px] font-medium flex items-center gap-[3px] transition-colors"
                             >
                                 <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -285,7 +310,7 @@ const Users = () => {
                                     <path d="M11.8595 19.526C16.0937 19.526 19.5262 16.0936 19.5262 11.8594H15.9325C15.0289 11.8594 14.5772 11.8594 14.2965 12.1401C14.0158 12.4208 14.0158 12.8725 14.0158 13.776C14.0158 14.9669 13.0504 15.9323 11.8595 15.9323C10.6687 15.9323 9.70329 14.9669 9.70329 13.776C9.70329 12.8725 9.70329 12.4208 9.4226 12.1401C9.14191 11.8594 8.69015 11.8594 7.78662 11.8594H4.19287C4.19287 16.0936 7.62535 19.526 11.8595 19.526Z" fill="white" />
                                 </svg>
                                 Export
-                            </button>
+                            </Button>
                         </div>
 
                         {/* Table View */}
@@ -399,27 +424,30 @@ const Users = () => {
                                                                             handleDeleteUser(user.id)
                                                                             setActiveDropdown(null)
                                                                         }}
-                                                                        className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b"
+                                                                        disabled={loadingStates[`delete-${user.id}`] || loadingStates[`cancel-${user.id}`] || loadingStates[`refund-${user.id}`]}
+                                                                        className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                                     >
-                                                                        Delete User
+                                                                        {loadingStates[`delete-${user.id}`] ? 'Deleting...' : 'Delete User'}
                                                                     </button>
                                                                     <button
                                                                         onClick={() => {
                                                                             handleCancelUser(user.id)
                                                                             setActiveDropdown(null)
                                                                         }}
-                                                                        className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b"
+                                                                        disabled={loadingStates[`delete-${user.id}`] || loadingStates[`cancel-${user.id}`] || loadingStates[`refund-${user.id}`]}
+                                                                        className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                                     >
-                                                                        Cancel User
+                                                                        {loadingStates[`cancel-${user.id}`] ? 'Cancelling...' : 'Cancel User'}
                                                                     </button>
                                                                     <button
                                                                         onClick={() => {
                                                                             handleRefundUser(user.id)
                                                                             setActiveDropdown(null)
                                                                         }}
-                                                                        className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b"
+                                                                        disabled={loadingStates[`delete-${user.id}`] || loadingStates[`cancel-${user.id}`] || loadingStates[`refund-${user.id}`]}
+                                                                        className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                                     >
-                                                                        Refund User
+                                                                        {loadingStates[`refund-${user.id}`] ? 'Processing...' : 'Refund User'}
                                                                     </button>
                                                                 </div>,
                                                                 document.body

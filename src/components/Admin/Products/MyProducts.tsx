@@ -11,6 +11,7 @@ const MyProducts = () => {
     const [showAddModal, setShowAddModal] = useState(false)
     const [activeDropdown, setActiveDropdown] = useState<number | null>(null)
     const [dropdownPosition, setDropdownPosition] = useState({ top: 0, right: 0 })
+    const [loadingStates, setLoadingStates] = useState<{[key: string]: boolean}>({})
     const [products, setProducts] = useState([
         {
             id: 1,
@@ -59,12 +60,22 @@ const MyProducts = () => {
         }
     ])
 
-    const handleDeleteProduct = (id: number) => {
-        setProducts(products.filter(product => product.id !== id))
+    const handleDeleteProduct = async (id: number) => {
+        setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: true }))
+        // Simulate API call
+        setTimeout(() => {
+            setProducts(products.filter(product => product.id !== id))
+            setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: false }))
+        }, 1000)
     }
 
-    const handleEditProduct = (id: number) => {
-        console.log('Edit product:', id)
+    const handleEditProduct = async (id: number) => {
+        setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: true }))
+        // Simulate API call
+        setTimeout(() => {
+            console.log('Edit product:', id)
+            setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: false }))
+        }, 1000)
     }
 
     // Close dropdown when clicking outside
@@ -194,18 +205,20 @@ const MyProducts = () => {
                                                                     handleEditProduct(product.id)
                                                                     setActiveDropdown(null)
                                                                 }}
-                                                                className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b"
+                                                                disabled={loadingStates[`edit-${product.id}`] || loadingStates[`delete-${product.id}`]}
+                                                                className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                             >
-                                                                Edit Product
+                                                                {loadingStates[`edit-${product.id}`] ? 'Editing...' : 'Edit Product'}
                                                             </button>
                                                             <button
                                                                 onClick={() => {
                                                                     handleDeleteProduct(product.id)
                                                                     setActiveDropdown(null)
                                                                 }}
-                                                                className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b"
+                                                                disabled={loadingStates[`edit-${product.id}`] || loadingStates[`delete-${product.id}`]}
+                                                                className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                             >
-                                                                Delete Product
+                                                                {loadingStates[`delete-${product.id}`] ? 'Deleting...' : 'Delete Product'}
                                                             </button>
                                                         </div>,
                                                         document.body

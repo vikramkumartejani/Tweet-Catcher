@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import RadioButton from '@/components/ui/RadioButton'
 import { createPortal } from 'react-dom'
+import Button from '@/components/ui/Button'
 
 interface CreateCheckoutLinkProps {
     onClose: () => void
@@ -13,6 +14,7 @@ const CreateCheckoutLink: React.FC<CreateCheckoutLinkProps> = ({ onClose }) => {
     const [password, setPassword] = useState('my-password')
     const [selectedProduct, setSelectedProduct] = useState('Account Automation Tool')
     const [selectedPlan, setSelectedPlan] = useState(0)
+    const [isLoading, setIsLoading] = useState(false)
 
     const products = [
         'Cloud Monitor Pro Plan',
@@ -54,14 +56,19 @@ const CreateCheckoutLink: React.FC<CreateCheckoutLinkProps> = ({ onClose }) => {
         }
     ]
 
-    const handleCreateLink = () => {
-        console.log('Creating checkout link with:', {
-            stock,
-            password,
-            selectedProduct,
-            selectedPlan
-        })
-        onClose()
+    const handleCreateLink = async () => {
+        setIsLoading(true)
+        // Simulate API call
+        setTimeout(() => {
+            console.log('Creating checkout link with:', {
+                stock,
+                password,
+                selectedProduct,
+                selectedPlan
+            })
+            setIsLoading(false)
+            onClose()
+        }, 1500)
     }
 
 
@@ -175,15 +182,18 @@ const CreateCheckoutLink: React.FC<CreateCheckoutLinkProps> = ({ onClose }) => {
                             ))}
                         </div>
 
-                        <button
+                        <Button
                             onClick={handleCreateLink}
+                            loading={isLoading}
+                            loadingText="Creating..."
+                            disabled={isLoading}
                             className="bg-[#535EE1] hover:bg-[#4A52D9] text-white px-8 h-[38px] cursor-pointer w-full rounded-md text-[14px] font-medium flex items-center justify-center gap-1.5 transition-colors"
                         >
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.6875 6C10.6875 6.14918 10.6282 6.29226 10.5227 6.39775C10.4173 6.50324 10.2742 6.5625 10.125 6.5625H6.5625V10.125C6.5625 10.2742 6.50324 10.4173 6.39775 10.5227C6.29226 10.6282 6.14918 10.6875 6 10.6875C5.85082 10.6875 5.70774 10.6282 5.60225 10.5227C5.49676 10.4173 5.4375 10.2742 5.4375 10.125V6.5625H1.875C1.72582 6.5625 1.58274 6.50324 1.47725 6.39775C1.37176 6.29226 1.3125 6.14918 1.3125 6C1.3125 5.85082 1.37176 5.70774 1.47725 5.60225C1.58274 5.49676 1.72582 5.4375 1.875 5.4375H5.4375V1.875C5.4375 1.72582 5.49676 1.58274 5.60225 1.47725C5.70774 1.37176 5.85082 1.3125 6 1.3125C6.14918 1.3125 6.29226 1.37176 6.39775 1.47725C6.50324 1.58274 6.5625 1.72582 6.5625 1.875V5.4375H10.125C10.2742 5.4375 10.4173 5.49676 10.5227 5.60225C10.6282 5.70774 10.6875 5.85082 10.6875 6Z" fill="white" />
                             </svg>
                             Create Checkout Link
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import PurchaseAddOns from './PurchaseAddOns'
 
 const ManagePlan = () => {
     const [showPurchaseModal, setShowPurchaseModal] = useState(false)
+    const [loadingStates, setLoadingStates] = useState<{[key: string]: boolean}>({})
 
     const addOns = [
         {
@@ -62,7 +63,7 @@ const ManagePlan = () => {
                     </div>
 
                     {/* Usage Left */}
-                    <div className='mb-6'>
+                    <div className='mb-8'>
                         <div className='flex items-center justify-between mb-3'>
                             <h3 className='text-[#515A69] text-[14px] font-medium'>Usage Left</h3>
                             <div className='text-[#515A69] text-[13px] sm:text-[14px] font-medium'>
@@ -84,9 +85,22 @@ const ManagePlan = () => {
                     {/* Pricing */}
                     <div className='flex items-end sm:items-center sm:flex-row flex-col gap-3.5 sm:gap-5 mb-5'>
                         <input type="text" placeholder='$25.00 / month' defaultValue='$25.00 / month' readOnly className='bg-[#191C27] rounded-md h-[38px] text-[#727A89] text-[14px] font-medium outline-none w-full sm:w-[353px] px-4' />
-                        <button className='text-[#FF6666] text-[14px] font-medium cursor-pointer text-nowrap'>
+                        <Button
+                            onClick={() => {
+                                setLoadingStates(prev => ({ ...prev, 'cancel-plan': true }))
+                                // Simulate API call
+                                setTimeout(() => {
+                                    console.log('Cancel plan')
+                                    setLoadingStates(prev => ({ ...prev, 'cancel-plan': false }))
+                                }, 1000)
+                            }}
+                            loading={loadingStates['cancel-plan']}
+                            loadingText="Cancelling..."
+                            disabled={loadingStates['cancel-plan']}
+                            className="text-[#FF6666] text-[14px] font-medium cursor-pointer text-nowrap bg-transparent hover:bg-transparent p-0 h-[38px]"
+                        >
                             Cancel Plan
-                        </button>
+                        </Button>
                     </div>
 
                     <div className='h-[1px] w-full bg-[#FFFFFF1A] mb-5' />
@@ -97,12 +111,12 @@ const ManagePlan = () => {
                             <h2 className='text-white text-[15px] font-semibold mb-1.5'>My Add-ons</h2>
                             <p className='text-[#515A69] text-[15px] font-medium'>View your add-ons here</p>
                         </div>
-                        <button
+                        <Button
                             onClick={() => setShowPurchaseModal(true)}
-                            className='px-4.5 h-[34px] rounded-md text-[14px] text-[#707BFF] cursor-pointer font-medium bg-[#212430]'
+                            className='px-4.5 h-[34px] rounded-md text-[14px] text-[#707BFF] cursor-pointer font-medium bg-[#212430] hover:bg-[#2A2F3A]'
                         >
                             Buy Add-ons
-                        </button>
+                        </Button>
                     </div>
 
                     {/* Add-ons List */}
@@ -125,9 +139,22 @@ const ManagePlan = () => {
                                         </div>
                                     </div>
 
-                                    <button className='text-[#FF6666] h-[34px] px-6 bg-[#212430] rounded-[5px] cursor-pointer text-[13px] font-medium'>
+                                    <Button
+                                        onClick={() => {
+                                            setLoadingStates(prev => ({ ...prev, [`cancel-addon-${addon.id}`]: true }))
+                                            // Simulate API call
+                                            setTimeout(() => {
+                                                console.log('Cancel addon plan:', addon.id)
+                                                setLoadingStates(prev => ({ ...prev, [`cancel-addon-${addon.id}`]: false }))
+                                            }, 1000)
+                                        }}
+                                        loading={loadingStates[`cancel-addon-${addon.id}`]}
+                                        loadingText="Cancelling..."
+                                        disabled={loadingStates[`cancel-addon-${addon.id}`]}
+                                        className='text-[#FF6666] h-[34px] px-6 bg-[#212430] rounded-[5px] cursor-pointer text-[13px] font-medium hover:bg-[#2A2F3A]'
+                                    >
                                         Cancel Plan
-                                    </button>
+                                    </Button>
                                 </div>
                             </div>
                         ))}

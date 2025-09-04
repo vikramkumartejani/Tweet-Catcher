@@ -68,6 +68,7 @@ const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => {
     const [taxBehavior, setTaxBehavior] = useState('Inclusive')
     const [productImage, setProductImage] = useState<File | null>(null)
     const [imagePreview, setImagePreview] = useState<string | null>(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleOverlayClick = (e: React.MouseEvent) => {
         if (e.target === e.currentTarget) {
@@ -286,22 +287,30 @@ const AddProductModal: React.FC<AddProductModalProps> = ({ onClose }) => {
 
                             <div className='w-full flex items-end justify-end'>
                                 <Button
-                                    onClick={() => {
-                                        console.log('Create Product:', {
-                                            productName,
-                                            returnUrl,
-                                            description,
-                                            pricingType,
-                                            currency,
-                                            pricing,
-                                            productStatus,
-                                            taxCategory,
-                                            taxBehavior,
-                                            productImage: productImage?.name,
-                                            imagePreview: imagePreview ? 'Image uploaded' : 'No image'
-                                        })
-                                        onClose()
+                                    onClick={async () => {
+                                        setIsLoading(true)
+                                        // Simulate API call
+                                        setTimeout(() => {
+                                            console.log('Create Product:', {
+                                                productName,
+                                                returnUrl,
+                                                description,
+                                                pricingType,
+                                                currency,
+                                                pricing,
+                                                productStatus,
+                                                taxCategory,
+                                                taxBehavior,
+                                                productImage: productImage?.name,
+                                                imagePreview: imagePreview ? 'Image uploaded' : 'No image'
+                                            })
+                                            setIsLoading(false)
+                                            onClose()
+                                        }, 1500)
                                     }}
+                                    loading={isLoading}
+                                    loadingText="Creating..."
+                                    disabled={isLoading}
                                     className='bg-[#535EE1] hover:bg-[#4A52D9] text-white px-6 w-[256px] h-[38px] rounded-md text-[13px] font-medium flex items-center gap-1.5'
                                 >
                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

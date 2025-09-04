@@ -13,6 +13,7 @@ const CheckoutLinks = () => {
     const [dropdownPosition, setDropdownPosition] = useState({ top: 0, right: 0 })
     const [selectedType, setSelectedType] = useState('')
     const [selectedReleaseMethod, setSelectedReleaseMethod] = useState('')
+    const [loadingStates, setLoadingStates] = useState<{[key: string]: boolean}>({})
     const [checkoutLinks, setCheckoutLinks] = useState([
         {
             id: 1,
@@ -88,12 +89,22 @@ const CheckoutLinks = () => {
         }
     ])
 
-    const handleDeleteLink = (id: number) => {
-        setCheckoutLinks(checkoutLinks.filter(link => link.id !== id))
+    const handleDeleteLink = async (id: number) => {
+        setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: true }))
+        // Simulate API call
+        setTimeout(() => {
+            setCheckoutLinks(checkoutLinks.filter(link => link.id !== id))
+            setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: false }))
+        }, 1000)
     }
 
-    const handleEditLink = (id: number) => {
-        console.log('Edit link:', id)
+    const handleEditLink = async (id: number) => {
+        setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: true }))
+        // Simulate API call
+        setTimeout(() => {
+            console.log('Edit link:', id)
+            setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: false }))
+        }, 1000)
     }
 
     const typeOptions = [
@@ -260,18 +271,20 @@ const CheckoutLinks = () => {
                                                                 handleEditLink(link.id)
                                                                 setActiveDropdown(null)
                                                             }}
-                                                            className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b"
+                                                            disabled={loadingStates[`edit-${link.id}`] || loadingStates[`delete-${link.id}`]}
+                                                            className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                         >
-                                                            Edit Link
+                                                            {loadingStates[`edit-${link.id}`] ? 'Editing...' : 'Edit Link'}
                                                         </button>
                                                         <button
                                                             onClick={() => {
                                                                 handleDeleteLink(link.id)
                                                                 setActiveDropdown(null)
                                                             }}
-                                                            className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b"
+                                                            disabled={loadingStates[`edit-${link.id}`] || loadingStates[`delete-${link.id}`]}
+                                                            className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                         >
-                                                            Delete Link
+                                                            {loadingStates[`delete-${link.id}`] ? 'Deleting...' : 'Delete Link'}
                                                         </button>
                                                     </div>,
                                                     document.body

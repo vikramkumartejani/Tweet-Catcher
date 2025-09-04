@@ -1,9 +1,11 @@
+"use client"
 import Button from '@/components/ui/Button'
 import InputField from '@/components/ui/InputField'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const MyInfomation = () => {
+    const [loadingStates, setLoadingStates] = useState<{[key: string]: boolean}>({})
     return (
         <div className='border border-[#3B3D5533] bg-[#13151E] rounded-md lg:max-w-[440px] w-full py-6 sm:py-8 px-4 sm:px-5'>
             <div className='lg:max-w-[354px] w-full mx-auto'>
@@ -25,7 +27,23 @@ const MyInfomation = () => {
                     inputClassName="text-white text-[14px] font-medium"
                 />
 
-                <Button className='mt-5 h-[38px] text-[14px] font-medium rounded-md w-full'>Update Discord</Button>
+                <button 
+                    onClick={() => {
+                        setLoadingStates(prev => ({ ...prev, 'update-discord': true }))
+                        // Simulate API call
+                        setTimeout(() => {
+                            console.log('Update Discord')
+                            setLoadingStates(prev => ({ ...prev, 'update-discord': false }))
+                        }, 1000)
+                    }}
+                    disabled={loadingStates['update-discord']}
+                    className='mt-5 h-[38px] text-[14px] font-medium rounded-md w-full bg-[#535EE1] hover:bg-[#4A52D9] text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2'
+                >
+                    {loadingStates['update-discord'] && (
+                        <div className='w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin'></div>
+                    )}
+                    {loadingStates['update-discord'] ? 'Updating...' : 'Update Discord'}
+                </button>
 
                 <InputField
                     label="Connected Email"
@@ -37,7 +55,23 @@ const MyInfomation = () => {
                     inputClassName="text-white text-[14px] font-medium"
                 />
 
-                <Button className='mt-5 h-[38px] text-[14px] font-medium rounded-md w-full'>Save Changes</Button>
+                <button 
+                    onClick={() => {
+                        setLoadingStates(prev => ({ ...prev, 'save-changes': true }))
+                        // Simulate API call
+                        setTimeout(() => {
+                            console.log('Save Changes')
+                            setLoadingStates(prev => ({ ...prev, 'save-changes': false }))
+                        }, 1000)
+                    }}
+                    disabled={loadingStates['save-changes']}
+                    className='mt-5 h-[38px] text-[14px] font-medium rounded-md w-full bg-[#535EE1] hover:bg-[#4A52D9] text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2'
+                >
+                    {loadingStates['save-changes'] && (
+                        <div className='w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin'></div>
+                    )}
+                    {loadingStates['save-changes'] ? 'Saving...' : 'Save Changes'}
+                </button>
 
                 <div className='h-[1px] w-full bg-[#FFFFFF1A] my-[28px]' />
 
@@ -45,7 +79,7 @@ const MyInfomation = () => {
                     <h3 className='text-[#515A69] text-[14px] font-medium'>Payment Method</h3>
 
                     {/* Payment Method Card */}
-                    <div className='my-5 bg-[#191C27] w-full rounded-md relative px-4 sm:px-[28px] pt-4 pb-5'>
+                    <div className='mt-5 mb-6 bg-[#191C27] w-full rounded-md relative px-4 sm:px-[28px] pt-4 pb-5'>
                         <div className=" absolute bottom-0 left-0 h-[3px] w-full rounded-b-md" style={{ background: 'linear-gradient(90deg, #535EE1 0%, #7080FF 100%)' }}></div>
 
                         <div className='flex items-center justify-between w-full'>
@@ -64,13 +98,44 @@ const MyInfomation = () => {
                                 </div>
                             </div>
 
-                            <button className='cursor-pointer'>
-                                <Image src='/assets/icons/trash.svg' alt='trash' width={17} height={17} />
+                            <button 
+                                onClick={() => {
+                                    setLoadingStates(prev => ({ ...prev, 'delete-payment': true }))
+                                    // Simulate API call
+                                    setTimeout(() => {
+                                        console.log('Delete Payment Method')
+                                        setLoadingStates(prev => ({ ...prev, 'delete-payment': false }))
+                                    }, 1000)
+                                }}
+                                disabled={loadingStates['delete-payment']}
+                                className='cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
+                            >
+                                {loadingStates['delete-payment'] ? (
+                                    <div className='w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin'></div>
+                                ) : (
+                                    <Image src='/assets/icons/trash.svg' alt='trash' width={17} height={17} />
+                                )}
                             </button>
                         </div>
                     </div>
 
-                    <button className='text-[#515A69] text-[14px] font-medium text-center cursor-pointer flex items-center justify-center w-full'>Change Payment Method</button>
+                    <button
+                        onClick={() => {
+                            setLoadingStates(prev => ({ ...prev, 'change-payment': true }))
+                            // Simulate API call
+                            setTimeout(() => {
+                                console.log('Change Payment Method')
+                                setLoadingStates(prev => ({ ...prev, 'change-payment': false }))
+                            }, 1000)
+                        }}
+                        disabled={loadingStates['change-payment']}
+                        className='text-[#515A69] text-[14px] font-medium text-center cursor-pointer flex items-center justify-center w-full disabled:opacity-50 disabled:cursor-not-allowed gap-2'
+                    >
+                        {loadingStates['change-payment'] && (
+                            <div className='w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin'></div>
+                        )}
+                        {loadingStates['change-payment'] ? 'Loading...' : 'Change Payment Method'}
+                    </button>
                 </div>
             </div>
         </div>

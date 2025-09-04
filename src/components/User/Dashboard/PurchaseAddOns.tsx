@@ -25,6 +25,7 @@ const SelectionButton: React.FC<{
 const PurchaseAddOns: React.FC<PurchaseAddOnsProps> = ({ onClose }) => {
     const [selectedTask, setSelectedTask] = useState('25 Tasks')
     const [selectedMonth, setSelectedMonth] = useState('3 Month')
+    const [isLoading, setIsLoading] = useState(false)
 
     const taskOptions = ['25 Tasks', '50 Tasks', '75 Tasks']
     const monthOptions = ['1 Month', '3 Month', '6 month']
@@ -100,11 +101,19 @@ const PurchaseAddOns: React.FC<PurchaseAddOnsProps> = ({ onClose }) => {
                     </div>
 
                     <Button
-                        className='w-full rounded-md text-[14px] font-semibold sm:max-w-[262px] h-[38px]'
-                        onClick={() => {
-                            console.log('Purchase:', { selectedTask, selectedMonth, price: getPriceForSelection() })
-                            onClose()
+                        className='w-full rounded-md text-[14px] bg-[#5A66E8] rounded-md font-semibold sm:max-w-[262px] h-[38px]'
+                        onClick={async () => {
+                            setIsLoading(true)
+                            // Simulate API call
+                            setTimeout(() => {
+                                console.log('Purchase:', { selectedTask, selectedMonth, price: getPriceForSelection() })
+                                setIsLoading(false)
+                                onClose()
+                            }, 1500)
                         }}
+                        loading={isLoading}
+                        loadingText="Processing..."
+                        disabled={isLoading}
                     >
                         Purchase Add-on
                     </Button>
