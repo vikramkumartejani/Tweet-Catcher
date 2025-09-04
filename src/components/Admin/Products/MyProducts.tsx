@@ -57,6 +57,141 @@ const MyProducts = () => {
             totalSubscriptions: 0,
             createdAt: "12/01/24, 11:20:45",
             image: "/assets/icons/default.svg"
+        },
+        {
+            id: 6,
+            name: "Enterprise Security",
+            status: "Active",
+            price: "$450/month",
+            totalSubscriptions: 78,
+            createdAt: "11/28/24, 08:15:22",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 7,
+            name: "Mobile App Access",
+            status: "Active",
+            price: "$75/month",
+            totalSubscriptions: 234,
+            createdAt: "11/20/24, 13:42:18",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 8,
+            name: "Advanced Reporting",
+            status: "Inactive",
+            price: "$120/month",
+            totalSubscriptions: 45,
+            createdAt: "10/15/24, 16:30:45",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 9,
+            name: "White Label Solution",
+            status: "Active",
+            price: "$800/month",
+            totalSubscriptions: 12,
+            createdAt: "09/30/24, 10:25:33",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 10,
+            name: "Basic Plan",
+            status: "Active",
+            price: "$29/month",
+            totalSubscriptions: 456,
+            createdAt: "09/15/24, 14:18:27",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 11,
+            name: "Custom Integration",
+            status: "Draft",
+            price: "$200/month",
+            totalSubscriptions: 0,
+            createdAt: "12/05/24, 09:30:15",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 12,
+            name: "Data Export Tool",
+            status: "Active",
+            price: "$65/month",
+            totalSubscriptions: 89,
+            createdAt: "11/10/24, 11:45:12",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 13,
+            name: "Team Collaboration",
+            status: "Active",
+            price: "$180/month",
+            totalSubscriptions: 67,
+            createdAt: "10/25/24, 15:20:40",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 14,
+            name: "Backup Service",
+            status: "Inactive",
+            price: "$40/month",
+            totalSubscriptions: 34,
+            createdAt: "10/12/24, 12:15:28",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 15,
+            name: "Priority Support",
+            status: "Active",
+            price: "$300/month",
+            totalSubscriptions: 23,
+            createdAt: "09/05/24, 17:35:50",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 16,
+            name: "Custom Themes",
+            status: "Draft",
+            price: "$85/month",
+            totalSubscriptions: 0,
+            createdAt: "12/08/24, 14:22:18",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 17,
+            name: "Advanced Analytics",
+            status: "Active",
+            price: "$220/month",
+            totalSubscriptions: 134,
+            createdAt: "11/02/24, 16:40:25",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 18,
+            name: "API Rate Limiting",
+            status: "Active",
+            price: "$95/month",
+            totalSubscriptions: 78,
+            createdAt: "10/18/24, 13:25:35",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 19,
+            name: "Multi-tenant Support",
+            status: "Inactive",
+            price: "$350/month",
+            totalSubscriptions: 15,
+            createdAt: "09/28/24, 11:50:42",
+            image: "/assets/icons/default.svg"
+        },
+        {
+            id: 20,
+            name: "Real-time Monitoring",
+            status: "Active",
+            price: "$160/month",
+            totalSubscriptions: 201,
+            createdAt: "09/12/24, 08:30:15",
+            image: "/assets/icons/default.svg"
         }
     ])
 
@@ -125,112 +260,123 @@ const MyProducts = () => {
                 </div>
 
                 {/* Table View */}
-                <div className="rounded-md overflow-x-auto overflow-y-hidden">
-                    <table className="w-full min-w-[970px]">
-                        <thead>
-                            <tr className="bg-[#13151E] border rounded-md border-[#3B3D5533]">
-                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Name</th>
-                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Status</th>
-                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Price</th>
-                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Total Subscriptions</th>
-                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Created at</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {products.map((product, index) => (
-                                <tr key={product.id} className={`border-b border-[#FFFFFF0D] hover:bg-[#13151E] transition-colors ${index === products.length - 1 ? 'border-b-0' : ''}`}>
-                                    <td className="px-4 py-4">
-                                        <div className="flex items-center gap-3">
-                                            <Image src='/assets/icons/default.svg' alt='default' width={40} height={40} className='sm:w-10 w-8' />
-                                            <span className="text-white text-[14px] sm:text-[15px] font-medium">{product.name}</span>
-                                        </div>
-                                    </td>
-                                    <td className="px-4 py-4">
-                                        <span className="inline-flex items-center px-4 h-[28px] rounded-full border border-[#191E26] bg-[#0E101A]">
-                                            <span className="text-white text-[11px] font-medium">{product.status}</span>
-                                        </span>
-                                    </td>
-                                    <td className="px-4 py-4">
-                                        <span className="text-white text-[15px] font-medium">{product.price}</span>
-                                    </td>
-                                    <td className="px-4 py-4">
-                                        <span className="text-white text-[15px] font-medium">{product.totalSubscriptions}</span>
-                                    </td>
-                                    <td className="px-4 py-4">
-                                        <div className="flex items-center justify-between gap-4">
-                                            <span className="text-white text-[15px] font-medium">{product.createdAt}</span>
-                                            <div className="flex items-center gap-[25px]">
-                                                <button className="bg-[#535EE1] hover:bg-[#5B5BD6] text-white px-3 h-[29px] rounded-md text-[12px] font-medium transition-colors cursor-pointer">
-                                                    Share
-                                                </button>
-                                                <div className="relative group">
-                                                    <button 
-                                                        className="cursor-pointer group w-6 h-[29px] flex items-center justify-center" 
-                                                        tabIndex={0}
-                                                        onClick={(e) => {
-                                                            e.stopPropagation()
-                                                            const rect = e.currentTarget.getBoundingClientRect()
-                                                            setDropdownPosition({
-                                                                top: rect.bottom + 4,
-                                                                right: window.innerWidth - rect.right
-                                                            })
-                                                            setActiveDropdown(activeDropdown === product.id ? null : product.id)
-                                                        }}
-                                                    >
-                                                        <svg
-                                                            // className="-mt-[7px]"
-                                                            width="22"
-                                                            height="4"
-                                                            viewBox="0 0 22 4"
-                                                            fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                        >
-                                                            <circle cx="2" cy="2" r="2" className="fill-[#272B3C] group-hover:fill-white/40" />
-                                                            <circle cx="11" cy="2" r="2" className="fill-[#272B3C] group-hover:fill-white/40" />
-                                                            <circle cx="20" cy="2" r="2" className="fill-[#272B3C] group-hover:fill-white/40" />
-                                                        </svg>
+                <div className=" overflow-hidden">
+                    <div className="max-h-[calc(100vh-200px)] overflow-y-auto overflow-x-auto custom-scrollbar rounded-md">
+                        <table className="w-full min-w-[970px]">
+                            <thead className="sticky top-0 z-10">
+                                <tr className="bg-[#13151E] border-b border-[#3B3D5533]">
+                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Name</th>
+                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Status</th>
+                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Price</th>
+                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Total Subscriptions</th>
+                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Created at</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {products.map((product, index) => (
+                                    <tr key={product.id} className={`border-b border-[#FFFFFF0D] hover:bg-[#13151E] transition-colors ${index === products.length - 1 ? 'border-b-0' : ''}`}>
+                                        <td className="px-4 py-4">
+                                            <div className="flex items-center gap-3">
+                                                <Image src='/assets/icons/default.svg' alt='default' width={40} height={40} className='sm:w-10 w-8' />
+                                                <span className="text-white text-[14px] sm:text-[15px] font-medium">{product.name}</span>
+                                            </div>
+                                        </td>
+                                        <td className="px-4 py-4">
+                                            <span className="inline-flex items-center px-4 h-[28px] rounded-full border border-[#191E26] bg-[#0E101A]">
+                                                <span className="text-white text-[11px] font-medium">{product.status}</span>
+                                            </span>
+                                        </td>
+                                        <td className="px-4 py-4">
+                                            <span className="text-white text-[15px] font-medium">{product.price}</span>
+                                        </td>
+                                        <td className="px-4 py-4">
+                                            <span className="text-white text-[15px] font-medium">{product.totalSubscriptions}</span>
+                                        </td>
+                                        <td className="px-4 py-4">
+                                            <div className="flex items-center justify-between gap-4">
+                                                <span className="text-white text-[15px] font-medium">{product.createdAt}</span>
+                                                <div className="flex items-center gap-[25px]">
+                                                    <button className="bg-[#535EE1] hover:bg-[#5B5BD6] text-white px-3 h-[29px] rounded-md text-[12px] font-medium transition-colors cursor-pointer">
+                                                        Share
                                                     </button>
-
-                                                    {/* Dropdown Menu */}
-                                                    {activeDropdown === product.id && createPortal(
-                                                        <div 
-                                                            className="fixed w-[147px] bg-[#13151E] border border-[#3B3D5533] rounded-[10px] z-[9999]"
-                                                            style={{
-                                                                top: `${dropdownPosition.top}px`,
-                                                                right: `${dropdownPosition.right}px`
+                                                    <div className="relative group">
+                                                        <button 
+                                                            className="cursor-pointer group w-6 h-[29px] flex items-center justify-center" 
+                                                            tabIndex={0}
+                                                            onClick={(e) => {
+                                                                e.stopPropagation()
+                                                                const rect = e.currentTarget.getBoundingClientRect()
+                                                                const tableContainer = e.currentTarget.closest('.custom-scrollbar')
+                                                                const containerRect = tableContainer?.getBoundingClientRect()
+                                                                const dropdownHeight = 62 // Approximate height of dropdown (2 buttons * 31px each)
+                                                                const spaceBelow = containerRect ? containerRect.bottom - rect.bottom : window.innerHeight - rect.bottom
+                                                                const spaceAbove = containerRect ? rect.top - containerRect.top : rect.top
+                                                                
+                                                                // Show above if not enough space below, but enough space above
+                                                                const showAbove = spaceBelow < dropdownHeight && spaceAbove > dropdownHeight
+                                                                
+                                                                setDropdownPosition({
+                                                                    top: showAbove ? rect.top - dropdownHeight - 4 : rect.bottom + 4,
+                                                                    right: window.innerWidth - rect.right
+                                                                })
+                                                                setActiveDropdown(activeDropdown === product.id ? null : product.id)
                                                             }}
                                                         >
-                                                            <button
-                                                                onClick={() => {
-                                                                    handleEditProduct(product.id)
-                                                                    setActiveDropdown(null)
-                                                                }}
-                                                                disabled={loadingStates[`edit-${product.id}`] || loadingStates[`delete-${product.id}`]}
-                                                                className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
+                                                            <svg
+                                                                // className="-mt-[7px]"
+                                                                width="22"
+                                                                height="4"
+                                                                viewBox="0 0 22 4"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
                                                             >
-                                                                {loadingStates[`edit-${product.id}`] ? 'Editing...' : 'Edit Product'}
-                                                            </button>
-                                                            <button
-                                                                onClick={() => {
-                                                                    handleDeleteProduct(product.id)
-                                                                    setActiveDropdown(null)
+                                                                <circle cx="2" cy="2" r="2" className="fill-[#272B3C] group-hover:fill-white/40" />
+                                                                <circle cx="11" cy="2" r="2" className="fill-[#272B3C] group-hover:fill-white/40" />
+                                                                <circle cx="20" cy="2" r="2" className="fill-[#272B3C] group-hover:fill-white/40" />
+                                                            </svg>
+                                                        </button>
+
+                                                        {/* Dropdown Menu */}
+                                                        {activeDropdown === product.id && createPortal(
+                                                                                                                    <div 
+                                                            className="absolute w-[147px] bg-[#13151E] border border-[#3B3D5533] rounded-[10px] z-[9999]"
+                                                                style={{
+                                                                    top: `${dropdownPosition.top}px`,
+                                                                    right: `${dropdownPosition.right}px`
                                                                 }}
-                                                                disabled={loadingStates[`edit-${product.id}`] || loadingStates[`delete-${product.id}`]}
-                                                                className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
                                                             >
-                                                                {loadingStates[`delete-${product.id}`] ? 'Deleting...' : 'Delete Product'}
-                                                            </button>
-                                                        </div>,
-                                                        document.body
-                                                    )}
+                                                                <button
+                                                                    onClick={() => {
+                                                                        handleEditProduct(product.id)
+                                                                        setActiveDropdown(null)
+                                                                    }}
+                                                                    disabled={loadingStates[`edit-${product.id}`] || loadingStates[`delete-${product.id}`]}
+                                                                    className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer border-b border-[#3B3D5533] hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
+                                                                >
+                                                                    {loadingStates[`edit-${product.id}`] ? 'Editing...' : 'Edit Product'}
+                                                                </button>
+                                                                <button
+                                                                    onClick={() => {
+                                                                        handleDeleteProduct(product.id)
+                                                                        setActiveDropdown(null)
+                                                                    }}
+                                                                    disabled={loadingStates[`edit-${product.id}`] || loadingStates[`delete-${product.id}`]}
+                                                                    className="w-full text-left px-[15px] leading-[31px] text-[#515A69] cursor-pointer hover:bg-[#2C2D3A] text-[12px] font-medium transition-colors first:rounded-t last:rounded-b disabled:opacity-50 disabled:cursor-not-allowed"
+                                                                >
+                                                                    {loadingStates[`delete-${product.id}`] ? 'Deleting...' : 'Delete Product'}
+                                                                </button>
+                                                            </div>,
+                                                            document.body
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

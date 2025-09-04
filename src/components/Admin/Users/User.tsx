@@ -104,7 +104,51 @@ const Users = () => {
             status: "Renews in 18 Days",
             statusType: "renewal",
             joined: "120 Days ago"
-        }
+        },
+        {
+            id: 9,
+            name: "Lisa Garcia",
+            username: "lisa-garcia",
+            email: "lisag@email.com",
+            discord: "lisa_garcia_music",
+            totalSpend: "$300.00",
+            status: "Renews in 18 Days",
+            statusType: "renewal",
+            joined: "120 Days ago"
+        },
+        {
+            id: 10,
+            name: "Lisa Garcia",
+            username: "lisa-garcia",
+            email: "lisag@email.com",
+            discord: "lisa_garcia_music",
+            totalSpend: "$300.00",
+            status: "Renews in 18 Days",
+            statusType: "renewal",
+            joined: "120 Days ago"
+        },
+        {
+            id: 11,
+            name: "Lisa Garcia",
+            username: "lisa-garcia",
+            email: "lisag@email.com",
+            discord: "lisa_garcia_music",
+            totalSpend: "$300.00",
+            status: "Renews in 18 Days",
+            statusType: "renewal",
+            joined: "120 Days ago"
+        },
+        {
+            id: 12,
+            name: "Lisa Garcia",
+            username: "lisa-garcia",
+            email: "lisag@email.com",
+            discord: "lisa_garcia_music",
+            totalSpend: "$300.00",
+            status: "Renews in 18 Days",
+            statusType: "renewal",
+            joined: "120 Days ago"
+        },
     ])
 
     const dateJoinedOptions = [
@@ -314,18 +358,19 @@ const Users = () => {
                         </div>
 
                         {/* Table View */}
-                        <div className="rounded-md overflow-x-auto overflow-y-hidden">
-                            <table className="w-full min-w-[970px]">
-                                <thead>
-                                    <tr className="bg-[#13151E] border rounded-md border-[#3B3D5533]">
-                                        <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">User</th>
-                                        <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Total Spend</th>
-                                        <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Status</th>
-                                        <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Contact</th>
-                                        <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Joined</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                        <div className="overflow-hidden">
+                            <div className="max-h-[calc(100vh-200px)] overflow-y-auto overflow-x-auto custom-scrollbar rounded-md">
+                                <table className="w-full min-w-[970px]">
+                                    <thead className="sticky top-0 z-10">
+                                        <tr className="bg-[#13151E] border-b border-[#3B3D5533]">
+                                            <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">User</th>
+                                            <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Total Spend</th>
+                                            <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Status</th>
+                                            <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Contact</th>
+                                            <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Joined</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                     {filteredUsers.length > 0 ? (
                                         filteredUsers.map((user, index) => (
                                             <tr key={user.id} className={`border-b border-[#FFFFFF0D] hover:bg-[#13151E] transition-colors ${index === filteredUsers.length - 1 ? 'border-b-0' : ''}`}>
@@ -390,8 +435,17 @@ const Users = () => {
                                                                 onClick={(e) => {
                                                                     e.stopPropagation()
                                                                     const rect = e.currentTarget.getBoundingClientRect()
+                                                                    const tableContainer = e.currentTarget.closest('.custom-scrollbar')
+                                                                    const containerRect = tableContainer?.getBoundingClientRect()
+                                                                    const dropdownHeight = 93 // Approximate height of dropdown (3 buttons * 31px each)
+                                                                    const spaceBelow = containerRect ? containerRect.bottom - rect.bottom : window.innerHeight - rect.bottom
+                                                                    const spaceAbove = containerRect ? rect.top - containerRect.top : rect.top
+                                                                    
+                                                                    // Show above if not enough space below, but enough space above
+                                                                    const showAbove = spaceBelow < dropdownHeight && spaceAbove > dropdownHeight
+                                                                    
                                                                     setDropdownPosition({
-                                                                        top: rect.bottom + 4,
+                                                                        top: showAbove ? rect.top - dropdownHeight - 4 : rect.bottom + 4,
                                                                         right: window.innerWidth - rect.right
                                                                     })
                                                                     setActiveDropdown(activeDropdown === user.id ? null : user.id)
@@ -413,7 +467,7 @@ const Users = () => {
                                                             {/* Dropdown Menu */}
                                                             {activeDropdown === user.id && createPortal(
                                                                 <div
-                                                                    className="fixed w-[147px] bg-[#13151E] border border-[#3B3D5533] rounded-[10px] z-[9999]"
+                                                                    className=" absolute w-[147px] bg-[#13151E] border border-[#3B3D5533] rounded-[10px] z-[9999]"
                                                                     style={{
                                                                         top: `${dropdownPosition.top}px`,
                                                                         right: `${dropdownPosition.right}px`
@@ -474,8 +528,9 @@ const Users = () => {
                                             </td>
                                         </tr>
                                     )}
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

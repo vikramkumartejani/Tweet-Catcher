@@ -11,7 +11,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
     return (
         <div className='min-h-screen'>
             <Header />
-            <main className="py-6 sm:py-8">
+            <main className="pt-6 sm:pt-8">
                 {children}
             </main>
         </div>
