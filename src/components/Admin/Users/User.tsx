@@ -299,7 +299,7 @@ const Users = () => {
 
     return (
         <DashboardLayout>
-            <div className="w-full text-white pt-4 sm:pt-6">
+            <div className="w-full text-white py-4 lg:py-0">
                 <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
                     <div className='flex items-start md:items-center md:flex-row flex-col gap-4 md:gap-[28px]'>
                         <div className="flex items-center gap-2.5">
@@ -357,7 +357,7 @@ const Users = () => {
 
                 {/* Table View */}
                 <div className="overflow-hidden">
-                    <div className="max-h-[calc(100vh-200px)] overflow-y-auto overflow-x-auto custom-scrollbar rounded-md">
+                    <div className="max-h-[calc(100vh-220px)] overflow-y-auto overflow-x-auto custom-scrollbar rounded-md">
                         <table className="w-full min-w-[970px]">
                             <thead className="sticky top-0 z-10">
                                 <tr className="bg-[#13151E] border-b border-[#3B3D5533]">
