@@ -299,8 +299,8 @@ const Users = () => {
 
     return (
         <DashboardLayout>
-            <div className="w-full text-white py-4 lg:py-0">
-                <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+            <div className="w-full text-white">
+                <div className="flex items-center justify-between flex-wrap gap-4 mb-4 sm:mb-6">
                     <div className='flex items-start md:items-center md:flex-row flex-col gap-4 md:gap-[28px]'>
                         <div className="flex items-center gap-2.5">
                             <Image src='/assets/icons/active-users.svg' alt='users' width={26} height={26} />

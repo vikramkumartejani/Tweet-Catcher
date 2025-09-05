@@ -160,7 +160,7 @@ const CheckoutLinks = () => {
 
     return (
         <div className="w-full">
-            <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+            <div className="flex items-center justify-between flex-wrap gap-4 mb-4 sm:mb-6">
                 <div className='flex items-start sm:items-center sm:flex-row flex-col gap-4 sm:gap-[33px]'>
                     <div className="flex items-center gap-2.5">
                         <Image src='/assets/icons/checkout-links.svg' alt='checkout-links' width={25} height={18} />
