@@ -16,10 +16,8 @@ const VerificationCode = () => {
 
         setIsVerifying(true)
 
-        // Simulate API call
         setTimeout(() => {
             setIsVerifying(false)
-            // Handle verification result here
             console.log('Verifying code:', code)
         }, 2000)
     }
@@ -27,10 +25,9 @@ const VerificationCode = () => {
     const handleResendCode = async () => {
         setIsResending(true)
 
-        // Simulate API call
         setTimeout(() => {
             setIsResending(false)
-            setCode('') // Clear code
+            setCode('')  
         }, 1500)
     }
 

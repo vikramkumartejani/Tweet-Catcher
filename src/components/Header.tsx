@@ -14,7 +14,6 @@ const Header = () => {
     const isAdmin = pathname.includes('/admin');
     const isUser = pathname.includes('/user');
 
-    // Admin navigation
     const adminNavigation = [
         {
             name: 'Dashboard',
@@ -42,7 +41,6 @@ const Header = () => {
         },
     ];
 
-    // User navigation
     const userNavigation = [
         {
             name: 'Dashboard',
@@ -76,7 +74,6 @@ const Header = () => {
 
     return (
         <>
-            {/* Mobile Sidebar Overlay */}
             {sidebarOpen && (
                 <div
                     className="fixed inset-0 bg-black/50 z-40 lg:hidden"
@@ -85,8 +82,7 @@ const Header = () => {
             )}
 
             {/* Mobile Sidebar */}
-            <div className={`fixed top-0 left-0 h-full w-64 bg-[#13151E] transform transition-transform duration-300 ease-in-out z-50 lg:hidden ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-                }`}>
+            <div className={`fixed top-0 left-0 h-full w-64 bg-[#13151E] transform transition-transform duration-300 ease-in-out z-50 lg:hidden ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="flex flex-col h-full">
                     {/* Sidebar Header */}
                     <div className="flex items-center justify-between px-4 py-5 sm:p-6 border-b border-[#FFFFFF1A]">
@@ -200,7 +196,6 @@ const Header = () => {
 
                     {/* Right Side */}
                     <div className="flex items-center gap-6 xl:gap-8">
-                        {/* Desktop Navigation - Hidden on mobile */}
                         {isAdmin && (
                             <div className='flex items-center gap-6 xl:gap-8'>
                                 <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-[#6B7587]">

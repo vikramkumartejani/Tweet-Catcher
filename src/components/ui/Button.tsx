@@ -42,7 +42,6 @@ const Button: React.FC<ButtonProps> = ({
 
     const widthClass = fullWidth ? 'w-full' : ''
 
-    // If custom className is provided, use it instead of default styling
     const hasCustomStyling = className.includes('bg-') || className.includes('text-') || className.includes('px-') || className.includes('py-') || className.includes('h-')
     
     const classes = hasCustomStyling 

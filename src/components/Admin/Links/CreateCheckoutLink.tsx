@@ -58,7 +58,6 @@ const CreateCheckoutLink: React.FC<CreateCheckoutLinkProps> = ({ onClose }) => {
 
     const handleCreateLink = async () => {
         setIsLoading(true)
-        // Simulate API call
         setTimeout(() => {
             console.log('Creating checkout link with:', {
                 stock,

@@ -148,7 +148,6 @@ const WeeklyRevenueOverview = () => {
                             tickLine={false}
                             tick={{ fontSize: 0, fill: "transparent" }}
                             domain={[0, getMaxValue(selectedPeriod)]}
-                        //   tickCount={8}
                         />
                         <Tooltip content={<CustomTooltip />} cursor={false} />
                         <Bar dataKey="revenue1" fill="#535EE1" radius={[4, 4, 0, 0]} maxBarSize={25} />

@@ -8,24 +8,24 @@ body {
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
 
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE aur Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
 }
 
-/* Custom Scrollbar Styles */
+/* Custom Scrollbar  */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
   height: 8px;

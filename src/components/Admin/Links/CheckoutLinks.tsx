@@ -91,7 +91,6 @@ const CheckoutLinks = () => {
 
     const handleDeleteLink = async (id: number) => {
         setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: true }))
-        // Simulate API call
         setTimeout(() => {
             setCheckoutLinks(checkoutLinks.filter(link => link.id !== id))
             setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: false }))
@@ -100,7 +99,6 @@ const CheckoutLinks = () => {
 
     const handleEditLink = async (id: number) => {
         setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: true }))
-        // Simulate API call
         setTimeout(() => {
             console.log('Edit link:', id)
             setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: false }))
@@ -239,11 +237,10 @@ const CheckoutLinks = () => {
                                                         const rect = e.currentTarget.getBoundingClientRect()
                                                         const tableContainer = e.currentTarget.closest('.custom-scrollbar')
                                                         const containerRect = tableContainer?.getBoundingClientRect()
-                                                        const dropdownHeight = 62 // Approximate height of dropdown (2 buttons * 31px each)
+                                                        const dropdownHeight = 62 
                                                         const spaceBelow = containerRect ? containerRect.bottom - rect.bottom : window.innerHeight - rect.bottom
                                                         const spaceAbove = containerRect ? rect.top - containerRect.top : rect.top
                                                         
-                                                        // Show above if not enough space below, but enough space above
                                                         const showAbove = spaceBelow < dropdownHeight && spaceAbove > dropdownHeight
                                                         
                                                         setDropdownPosition({

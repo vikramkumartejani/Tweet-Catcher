@@ -197,7 +197,6 @@ const MyProducts = () => {
 
     const handleDeleteProduct = async (id: number) => {
         setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: true }))
-        // Simulate API call
         setTimeout(() => {
         setProducts(products.filter(product => product.id !== id))
             setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: false }))
@@ -206,14 +205,12 @@ const MyProducts = () => {
 
     const handleEditProduct = async (id: number) => {
         setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: true }))
-        // Simulate API call
         setTimeout(() => {
         console.log('Edit product:', id)
             setLoadingStates(prev => ({ ...prev, [`edit-${id}`]: false }))
         }, 1000)
     }
 
-    // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (activeDropdown !== null) {
@@ -307,11 +304,10 @@ const MyProducts = () => {
                                                             const rect = e.currentTarget.getBoundingClientRect()
                                                                 const tableContainer = e.currentTarget.closest('.custom-scrollbar')
                                                                 const containerRect = tableContainer?.getBoundingClientRect()
-                                                                const dropdownHeight = 62 // Approximate height of dropdown (2 buttons * 31px each)
+                                                                const dropdownHeight = 62  
                                                                 const spaceBelow = containerRect ? containerRect.bottom - rect.bottom : window.innerHeight - rect.bottom
                                                                 const spaceAbove = containerRect ? rect.top - containerRect.top : rect.top
                                                                 
-                                                                // Show above if not enough space below, but enough space above
                                                                 const showAbove = spaceBelow < dropdownHeight && spaceAbove > dropdownHeight
                                                                 
                                                             setDropdownPosition({
@@ -322,7 +318,6 @@ const MyProducts = () => {
                                                         }}
                                                     >
                                                         <svg
-                                                            // className="-mt-[7px]"
                                                             width="22"
                                                             height="4"
                                                             viewBox="0 0 22 4"

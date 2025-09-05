@@ -90,7 +90,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ username }) => {
         <DashboardLayout>
             <div className='my-4 sm:my-6'>
                 <div className='max-w-[1312px] w-full mx-auto text-white overflow-hidden'>
-                    {/* Header */}
                     <div className="flex items-center gap-2 mb-8">
                         <button
                             onClick={handleBackClick}
@@ -115,7 +114,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ username }) => {
                         </div>
                     </div>
 
-                    {/* Main Content */}
                     <div className="flex lg:flex-row items-start justify-between flex-col gap-5 md:gap-8 w-full overflow-hidden lg:overflow-hidden overflow-x-auto">
                         {/* Left Column */}
                         <div className="space-y-5 md:space-y-8 lg:space-y-11 w-full lg:w-[503px]">

@@ -169,7 +169,6 @@ const Users = () => {
 
     const handleDeleteUser = async (id: number) => {
         setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: true }))
-        // Simulate API call
         setTimeout(() => {
             setUsers(users.filter(user => user.id !== id))
             setLoadingStates(prev => ({ ...prev, [`delete-${id}`]: false }))
@@ -178,7 +177,6 @@ const Users = () => {
 
     const handleCancelUser = async (id: number) => {
         setLoadingStates(prev => ({ ...prev, [`cancel-${id}`]: true }))
-        // Simulate API call
         setTimeout(() => {
             console.log('Cancel user:', id)
             setLoadingStates(prev => ({ ...prev, [`cancel-${id}`]: false }))
@@ -187,7 +185,6 @@ const Users = () => {
 
     const handleRefundUser = async (id: number) => {
         setLoadingStates(prev => ({ ...prev, [`refund-${id}`]: true }))
-        // Simulate API call
         setTimeout(() => {
             console.log('Refund user:', id)
             setLoadingStates(prev => ({ ...prev, [`refund-${id}`]: false }))
@@ -196,9 +193,7 @@ const Users = () => {
 
     const handleExportUsers = async () => {
         setLoadingStates(prev => ({ ...prev, 'export': true }))
-        // Simulate API call
         setTimeout(() => {
-            // Prepare CSV data
             const csvHeaders = ['Name', 'Email', 'Total Spend', 'Status', 'Joined']
             const csvData = filteredUsers.map(user => [
                 user.name,
@@ -208,13 +203,11 @@ const Users = () => {
                 user.joined
             ])
 
-            // Create CSV content
             const csvContent = [
                 csvHeaders.join(','),
                 ...csvData.map(row => row.map(field => `"${field}"`).join(','))
             ].join('\n')
 
-            // Create and download file
             const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
             const link = document.createElement('a')
             const url = URL.createObjectURL(blob)
@@ -227,7 +220,6 @@ const Users = () => {
             link.click()
             document.body.removeChild(link)
 
-            // Clean up
             URL.revokeObjectURL(url)
             setLoadingStates(prev => ({ ...prev, 'export': false }))
         }, 1000)
@@ -243,7 +235,6 @@ const Users = () => {
         return statusColors[statusType as keyof typeof statusColors] || 'bg-[#6B7280]'
     }
 
-    // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (activeDropdown !== null) {
@@ -260,11 +251,9 @@ const Users = () => {
         }
     }, [activeDropdown])
 
-    // Helper function to check if user joined within date range
     const isWithinDateRange = (joinedText: string, dateFilter: string) => {
         if (dateFilter === '' || dateFilter === 'all') return true
 
-        // Extract number of days from "X Days ago" format
         const daysMatch = joinedText.match(/(\d+)\s+Days?\s+ago/)
         if (!daysMatch) return false
 
@@ -285,7 +274,6 @@ const Users = () => {
         }
     }
 
-    // Filter users based on search and filters
     const filteredUsers = users.filter(user => {
         const matchesSearch = searchTerm === '' ||
             user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -435,11 +423,10 @@ const Users = () => {
                                                                 const rect = e.currentTarget.getBoundingClientRect()
                                                                 const tableContainer = e.currentTarget.closest('.custom-scrollbar')
                                                                 const containerRect = tableContainer?.getBoundingClientRect()
-                                                                const dropdownHeight = 93 // Approximate height of dropdown (3 buttons * 31px each)
+                                                                const dropdownHeight = 93 
                                                                 const spaceBelow = containerRect ? containerRect.bottom - rect.bottom : window.innerHeight - rect.bottom
                                                                 const spaceAbove = containerRect ? rect.top - containerRect.top : rect.top
 
-                                                                // Show above if not enough space below, but enough space above
                                                                 const showAbove = spaceBelow < dropdownHeight && spaceAbove > dropdownHeight
 
                                                                 setDropdownPosition({
