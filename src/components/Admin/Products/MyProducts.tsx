@@ -260,8 +260,8 @@ const MyProducts = () => {
 
             {/* Table View */}
             <div className="w-full overflow-hidden">
-                <div className="max-h-[calc(100vh-200px)] overflow-y-auto overflow-x-hidden custom-scrollbar rounded-md">
-                    <table className="w-full">
+                <div className="max-h-[calc(100vh-200px)] overflow-y-auto overflow-x-auto custom-scrollbar rounded-md">
+                    <table className="w-full min-w-[970px]">
                         <thead className="sticky top-0 z-10">
                             <tr className="bg-[#13151E] border-b border-[#3B3D5533]">
                                 <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Name</th>
