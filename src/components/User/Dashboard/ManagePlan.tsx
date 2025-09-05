@@ -120,7 +120,7 @@ const ManagePlan = () => {
                     </div>
 
                     {/* Add-ons List */}
-                    <div className='flex flex-col gap-4 w-full'>
+                    <div className='flex flex-col gap-3.5 w-full'>
                         {addOns.map((addon) => (
                             <div key={addon.id} className='bg-[#191C27] rounded-md px-4 sm:px-5 xl:px-[28px] pr-5 sm:pr-8 xl:pr-10 py-4 relative'>
                                 <div className='absolute right-0 top-0 bottom-0 w-[3px] rounded-r-md' style={{ background: "linear-gradient(90deg, #535EE1 0%, #7080FF 100%)" }} />

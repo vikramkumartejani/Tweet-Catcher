@@ -8,7 +8,7 @@ import GrossVolumeFromSales from './GrossVolumeFromSales';
 const Dashboard = () => {
   return (
     <DashboardLayout>
-      <div className='mb-6 sm:mb-8 mt-4 sm:mt-6'>
+      <div className='my-4 sm:my-6'>
         <div className='max-w-[1312px] w-full mx-auto text-white'>
           <HeaderCards />
           <div className='mt-5 md:mt-8 flex items-start gap-5 md:gap-[34px] lg:flex-row flex-col'>
