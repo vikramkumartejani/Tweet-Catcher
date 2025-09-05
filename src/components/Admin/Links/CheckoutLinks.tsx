@@ -159,58 +159,57 @@ const CheckoutLinks = () => {
     }
 
     return (
-        <>
-            <div className="w-full mb-10">
-                <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
-                    <div className='flex items-start sm:items-center sm:flex-row flex-col gap-4 sm:gap-[33px]'>
-                        <div className="flex items-center gap-2.5">
-                            <Image src='/assets/icons/checkout-links.svg' alt='checkout-links' width={25} height={18} />
-                            <h1 className="text-white text-[16px] font-semibold">Checkout Links</h1>
-                        </div>
-                        <div className='flex items-center gap-3 sm:gap-5'>
-                            <Dropdown
-                                options={typeOptions}
-                                value={selectedType}
-                                onChange={setSelectedType}
-                                label="Type"
-                                showLabel={true}
-                            />
-
-                            <Dropdown
-                                options={releaseMethodOptions}
-                                value={selectedReleaseMethod}
-                                onChange={setSelectedReleaseMethod}
-                                label="Release Method"
-                                showLabel={true}
-                            />
-                        </div>
+        <div className="w-full">
+            <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+                <div className='flex items-start sm:items-center sm:flex-row flex-col gap-4 sm:gap-[33px]'>
+                    <div className="flex items-center gap-2.5">
+                        <Image src='/assets/icons/checkout-links.svg' alt='checkout-links' width={25} height={18} />
+                        <h1 className="text-white text-[16px] font-semibold">Checkout Links</h1>
                     </div>
+                    <div className='flex items-center gap-3 sm:gap-5'>
+                        <Dropdown
+                            options={typeOptions}
+                            value={selectedType}
+                            onChange={setSelectedType}
+                            label="Type"
+                            showLabel={true}
+                        />
 
-                    <Button
-                        onClick={() => setShowCreateModal(true)}
-                        className="bg-[#535EE1] hover:bg-[#4A52D9] text-white px-4 h-[33px] rounded-md text-[13px] font-medium flex items-center gap-1"
-                    >
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.6875 6C10.6875 6.14918 10.6282 6.29226 10.5227 6.39775C10.4173 6.50324 10.2742 6.5625 10.125 6.5625H6.5625V10.125C6.5625 10.2742 6.50324 10.4173 6.39775 10.5227C6.29226 10.6282 6.14918 10.6875 6 10.6875C5.85082 10.6875 5.70774 10.6282 5.60225 10.5227C5.49676 10.4173 5.4375 10.2742 5.4375 10.125V6.5625H1.875C1.72582 6.5625 1.58274 6.50324 1.47725 6.39775C1.37176 6.29226 1.3125 6.14918 1.3125 6C1.3125 5.85082 1.37176 5.70774 1.47725 5.60225C1.58274 5.49676 1.72582 5.4375 1.875 5.4375H5.4375V1.875C5.4375 1.72582 5.49676 1.58274 5.60225 1.47725C5.70774 1.37176 5.85082 1.3125 6 1.3125C6.14918 1.3125 6.29226 1.37176 6.39775 1.47725C6.50324 1.58274 6.5625 1.72582 6.5625 1.875V5.4375H10.125C10.2742 5.4375 10.4173 5.49676 10.5227 5.60225C10.6282 5.70774 10.6875 5.85082 10.6875 6Z" fill="white" />
-                        </svg>
-                        Create checkout link
-                    </Button>
+                        <Dropdown
+                            options={releaseMethodOptions}
+                            value={selectedReleaseMethod}
+                            onChange={setSelectedReleaseMethod}
+                            label="Release Method"
+                            showLabel={true}
+                        />
+                    </div>
                 </div>
 
-                {/* Table View */}
-                <div className="overflow-hidden">
-                    <div className="max-h-[calc(100vh-200px)] overflow-y-auto overflow-x-auto custom-scrollbar rounded-md">
-                        <table className="w-full min-w-[970px]">
-                            <thead className="sticky top-0 z-10">
-                                <tr className="bg-[#13151E] border-b border-[#3B3D5533]">
-                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Product</th>
-                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Created At</th>
-                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Plan</th>
-                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Active Users</th>
-                                    <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Stock</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                <Button
+                    onClick={() => setShowCreateModal(true)}
+                    className="bg-[#535EE1] hover:bg-[#4A52D9] text-white px-4 h-[33px] rounded-md text-[13px] font-medium flex items-center gap-1"
+                >
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.6875 6C10.6875 6.14918 10.6282 6.29226 10.5227 6.39775C10.4173 6.50324 10.2742 6.5625 10.125 6.5625H6.5625V10.125C6.5625 10.2742 6.50324 10.4173 6.39775 10.5227C6.29226 10.6282 6.14918 10.6875 6 10.6875C5.85082 10.6875 5.70774 10.6282 5.60225 10.5227C5.49676 10.4173 5.4375 10.2742 5.4375 10.125V6.5625H1.875C1.72582 6.5625 1.58274 6.50324 1.47725 6.39775C1.37176 6.29226 1.3125 6.14918 1.3125 6C1.3125 5.85082 1.37176 5.70774 1.47725 5.60225C1.58274 5.49676 1.72582 5.4375 1.875 5.4375H5.4375V1.875C5.4375 1.72582 5.49676 1.58274 5.60225 1.47725C5.70774 1.37176 5.85082 1.3125 6 1.3125C6.14918 1.3125 6.29226 1.37176 6.39775 1.47725C6.50324 1.58274 6.5625 1.72582 6.5625 1.875V5.4375H10.125C10.2742 5.4375 10.4173 5.49676 10.5227 5.60225C10.6282 5.70774 10.6875 5.85082 10.6875 6Z" fill="white" />
+                    </svg>
+                    Create checkout link
+                </Button>
+            </div>
+
+            {/* Table View */}
+            <div className="overflow-hidden">
+                <div className="max-h-[calc(100vh-200px)] overflow-y-auto overflow-x-auto custom-scrollbar rounded-md">
+                    <table className="w-full min-w-[970px]">
+                        <thead className="sticky top-0 z-10">
+                            <tr className="bg-[#13151E] border-b border-[#3B3D5533]">
+                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Product</th>
+                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Created At</th>
+                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Plan</th>
+                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Active Users</th>
+                                <th className="text-left px-4 py-3 text-[#515A69] text-[14px] font-medium capitalize">Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             {checkoutLinks.map((link, index) => (
                                 <tr key={link.id} className={`border-b border-[#FFFFFF0D] hover:bg-[#13151E] transition-colors ${index === checkoutLinks.length - 1 ? 'border-b-0' : ''}`}>
                                     <td className="px-4 py-4">
@@ -305,8 +304,7 @@ const CheckoutLinks = () => {
                                 </tr>
                             ))}
                         </tbody>
-                        </table>
-                    </div>
+                    </table>
                 </div>
             </div>
 
@@ -314,7 +312,7 @@ const CheckoutLinks = () => {
             {showCreateModal && (
                 <CreateCheckoutLink onClose={() => setShowCreateModal(false)} />
             )}
-        </>
+        </div>
     )
 }
 

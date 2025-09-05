@@ -9,10 +9,12 @@ interface DashboardLayoutProps {
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen flex flex-col'>
             <Header />
-            <main className="pt-6 sm:pt-8">
-                {children}
+            <main className="flex-1 flex items-center justify-center px-4 md:px-6">
+                <div className="w-full max-w-[1312px] mx-auto">
+                    {children}
+                </div>
             </main>
         </div>
     );
